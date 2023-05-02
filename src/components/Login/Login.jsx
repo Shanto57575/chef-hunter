@@ -3,7 +3,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import Home from "../Home/Home";
+import Banner from "../Banner/Banner";
 
 const Login = () => {
 	const [success, setSuccess] = useState(" ");
@@ -49,7 +49,7 @@ const Login = () => {
 
 	return (
 		<div>
-			<Home></Home>
+			<Banner></Banner>
 			<div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
 				<div className="w-full p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-xl">
 					<h1 className="text-3xl font-semibold text-center text-blue-400 uppercase">
