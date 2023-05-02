@@ -17,7 +17,7 @@ const Header = () => {
 	return (
 		<div className="md:navbar bg-slate-500 text-white rounded-lg my-5">
 			<h1 className="btn btn-ghost normal-case text-xl">
-				Fatto A<span className="text-blue-400 font-extrabold">mano</span>
+				The <span className="text-blue-400 font-extrabold">Etalia</span>
 			</h1>
 			<Link className="btn btn-ghost normal-case text-xl text-blue-400" to="/">
 				Home
