@@ -15,39 +15,83 @@ const Header = () => {
 	};
 
 	return (
-		<div className="md:navbar bg-slate-500 text-white rounded-lg my-5">
-			<h1 className="btn btn-ghost normal-case text-xl">
-				The <span className="text-blue-400 font-extrabold">Etalia</span>
-			</h1>
-			<Link className="btn btn-ghost normal-case text-xl text-blue-400" to="/">
-				Home
-			</Link>
-			<Link
-				className="btn btn-ghost normal-case text-xl text-blue-400"
-				to="/blog"
-			>
-				Blog
-			</Link>
-			<Link
-				className="btn btn-ghost normal-case text-xl text-blue-400"
-				to="/login"
-			>
-				Login
-			</Link>
-			<Link
-				className="btn btn-ghost normal-case text-xl text-blue-400"
-				to="/register"
-			>
-				Sign Up
-			</Link>
-			{user && (
-				<button
-					className="btn btn-ghost normal-case text-xl text-blue-400"
-					onClick={handleSignOut}
-				>
-					Sign Out
-				</button>
-			)}
+		<div className="navbar bg-stone-700 rounded-lg my-5 p-3">
+			<div className="navbar-start">
+				<div className="dropdown">
+					<label tabIndex={0} className="btn btn-ghost lg:hidden">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							className="h-5 w-5"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth="2"
+								d="M4 6h16M4 12h8m-8 6h16"
+							/>
+						</svg>
+					</label>
+					<ul
+						tabIndex={0}
+						className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+					>
+						<Link className="btn btn-ghost normal-case text-xl" to="/">
+							Home
+						</Link>
+						<Link className="btn btn-ghost normal-case text-xl " to="/blog">
+							Blog
+						</Link>
+						<Link className="btn btn-ghost normal-case text-xl " to="/login">
+							Login
+						</Link>
+						<Link className="btn btn-ghost normal-case text-xl " to="/register">
+							Sign Up
+						</Link>
+						{user && (
+							<button
+								className="btn btn-ghost normal-case text-xl "
+								onClick={handleSignOut}
+							>
+								Sign Out
+							</button>
+						)}
+					</ul>
+				</div>
+				<h1 className="text-2xl  font-serif btn">
+					{" "}
+					The <span className="text-orange-500 font-extrabold">Etalia</span>
+				</h1>
+			</div>
+			<div className="navbar-center hidden lg:flex">
+				<ul className="menu menu-horizontal px-1">
+					<Link className="btn btn-ghost normal-case text-xl " to="/">
+						Home
+					</Link>
+					<Link className="btn btn-ghost normal-case text-xl " to="/blog">
+						Blog
+					</Link>
+					<Link className="btn btn-ghost normal-case text-xl " to="/login">
+						Login
+					</Link>
+					<Link className="btn btn-ghost normal-case text-xl " to="/register">
+						Sign Up
+					</Link>
+					{user && (
+						<button
+							className="btn btn-ghost normal-case text-xl "
+							onClick={handleSignOut}
+						>
+							Sign Out
+						</button>
+					)}{" "}
+				</ul>
+			</div>
+			<div className="navbar-end">
+				<a className="btn">Get started</a>
+			</div>
 		</div>
 	);
 };

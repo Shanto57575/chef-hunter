@@ -12,7 +12,7 @@ const ChefCard = () => {
 			.then((data) => setChefs(data));
 	}, []);
 	return (
-		<div className="grid grid-cols-3 gap-5 my-10">
+		<div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-5 my-10">
 			{chefs.map((chef) => (
 				<Chefs key={chef.id} chef={chef}></Chefs>
 			))}

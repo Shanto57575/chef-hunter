@@ -1,50 +1,58 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import food from "../../assets/italianFood.jpg";
-import logo from "../../assets/logo.png";
 import Marquee from "react-fast-marquee";
+import bannerImage from "../../assets/italianFood.jpg"; // Import your image file
 
 const Banner = () => {
 	return (
-		<div className="lg:grid lg:grid-cols-2 bg-slate-300">
-			<div className="text-2xl italic lg:m-5 font-extrabold text-center">
-				<div className="grid sm:grid-cols-1 lg:grid-cols-3">
-					<div className="w-24 mx-auto lg:mt-12">
-						<img className="rounded-full" src={logo} alt="" />
-					</div>
-					<div>
-						<span className="text-orange-600">
-							ITalian <span className="text-5xl text-black">C</span>UISINE
-						</span>
-						<h1 className="text-black">By</h1>
-						<span className="text-orange-600">
-							{" "}
-							ITalian <span className="text-5xl text-black">C</span>HEFS
-						</span>
-					</div>
-				</div>
-				<Marquee
-					speed={100}
-					className="text-base mt-5 text-orange-500 bg-black p-3"
-				>
-					<span className="text-white">....Sign Up....</span>
-					to Reserve Your table for any special Date
-					<span className="text-white">....Sign Up....</span>
-					to Reserve Your table for any special Date
-				</Marquee>
-
-				<div>
-					<p className="text-base font-serif mt-5 text-orange-500">
-						True Italian Food
-					</p>
-					<p className="text-base font-sans">
-						Food brings people together on many different levels. It’s
-						nourishment of the soul and body; it’s truly love
-					</p>
-				</div>
+		<div className="relative h-screen">
+			<div className="absolute inset-0">
+				<img
+					style={{ filter: "brightness(0.6)" }}
+					src={bannerImage}
+					alt="Banner"
+					className="h-full w-full object-cover "
+				/>
 			</div>
-			<div>
-				<img src={food} alt="" />
+			<div className="absolute inset-0 flex items-center justify-center text-center lg:mx-20">
+				<div className="text-4xl font-bold tracking-wide text-center">
+					<div className="lg:mt-12 flex justify-center items-center">
+						<p className="text-base text-white p-2">
+							<span className="font-serif">Welcome to</span>
+							<h1 className="text-2xl text-white font-serif">
+								<span className="text-white font-extrabold">The</span>
+								<span className="text-orange-300 font-extrabold">Etalia,</span>
+							</h1>
+							<span className="font-serif">
+								{" "}
+								Where every dish tells a story of its Italian roots
+							</span>
+						</p>
+					</div>
+					<Marquee speed={100} className="text-base rounded-full  bg-black p-3">
+						<span className="text-white">....Sign Up....</span>
+						to Reserve Your table for any special Date
+						<span className="text-white">....Sign Up....</span>
+						to Reserve Your table for any special Date
+					</Marquee>
+					<div>
+						<div className="text-base font-serif">
+							<span className="text-white">
+								Italian <span className="text-3xl text-white">C</span>uisine
+								<strong className="text-3xl text-white"> B</strong>y
+							</span>
+							<span className="text-white">
+								{" "}
+								Italian <span className="text-3xl text-white">C</span>hefs
+							</span>
+						</div>
+						<p className="text-base text-white mt-3 font-serif">
+							Italian Food brings people together on many different levels. It’s
+							nourishment of the soul and body; it’s truly love
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

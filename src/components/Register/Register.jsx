@@ -61,13 +61,6 @@ const Register = () => {
 	};
 	return (
 		<div>
-			<h1 className="text-xl italic text-center my-5">
-				Welcome to, The
-				<span className="text-orange-500 font-extrabold text-3xl">
-					{" "}
-					Etalia
-				</span>{" "}
-			</h1>
 			<Banner></Banner>
 			<div className="relative flex flex-col justify-center min-h-screen overflow-hidden my-10">
 				<div className="w-full p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-xl">
