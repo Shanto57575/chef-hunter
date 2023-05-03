@@ -2,12 +2,12 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faUtensils } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const Chefs = ({ chef }) => {
 	console.log(chef);
-	const { chefImage, chefName, ChefExperience, recipes, Likes } = chef;
+	const { id, chefImage, chefName, ChefExperience, recipes, Likes } = chef;
 	return (
 		<div className="card w-full glass transform hover:bg-yellow-600 hover:text-white transition duration-300">
 			<figure>
@@ -32,7 +32,7 @@ const Chefs = ({ chef }) => {
 					</span>
 				</p>
 				<div className="card-actions justify-end">
-					<Link to="/chef/:id">
+					<Link to={`/chef/${id}`}>
 						<button className="btn btn-primary">View Recipes</button>
 					</Link>
 				</div>

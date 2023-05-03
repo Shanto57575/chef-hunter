@@ -11,6 +11,7 @@ const ChefCard = () => {
 			.then((res) => res.json())
 			.then((data) => setChefs(data));
 	}, []);
+
 	return (
 		<div>
 			<div className="text-center mt-20">

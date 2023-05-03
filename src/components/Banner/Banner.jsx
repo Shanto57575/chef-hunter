@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import Marquee from "react-fast-marquee";
-import bannerImage from "../../assets/italianFood.jpg"; // Import your image file
+import bannerImage from "../../assets/banner1.jpg"; // Import your image file
 
 const Banner = () => {
 	return (
@@ -18,7 +18,7 @@ const Banner = () => {
 				<div className="font-bold tracking-wide text-center">
 					<div className="text-base text-white">
 						<span className="font-serif">Welcome to</span>
-						<h1 className="text-2xl text-white font-serif">
+						<h1 className="text-5xl text-white font-serif">
 							<span className="text-white font-extrabold">The</span>
 							<span className="text-orange-300 font-extrabold">Etalia,</span>
 						</h1>
