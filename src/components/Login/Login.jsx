@@ -51,36 +51,34 @@ const Login = () => {
 		<div>
 			<Banner></Banner>
 			<div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
-				<div className="w-full p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-xl">
-					<h1 className="text-3xl font-semibold text-center text-blue-400 uppercase">
+				<div className="w-full p-6 m-auto border rounded-md shadow-xl lg:max-w-xl">
+					<h1 className="text-3xl font-semibold text-center uppercase">
 						Sign in
 					</h1>
 					<form onSubmit={handleLogin} className="mt-6">
 						<div className="mb-2">
-							<label className="block text-sm font-semibold text-gray-800">
-								Email
-							</label>
+							<label className="block text-sm font-semibold">Email</label>
 							<input
 								name="email"
 								type="email"
-								className="block w-full px-4 py-2 mt-2 text-blue-400 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+								placeholder="Email"
+								className="block w-full px-4 py-2 mt-2  bg-white border rounded-md focus:border-white focus:ring-white focus:outline-none focus:ring focus:ring-opacity-40"
+								required
 							/>
 						</div>
 						<div className="mb-2">
-							<label className="block text-sm font-semibold text-gray-800">
-								Password
-							</label>
+							<label className="block text-sm font-semibold ">Password</label>
 							<input
 								name="password"
 								type="password"
-								className="block w-full px-4 py-2 mt-2 text-blue-400 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+								placeholder="password"
+								className="block w-full px-4 py-2 mt-2  bg-white border rounded-md focus:border-white focus:ring-white focus:outline-none focus:ring focus:ring-opacity-40"
+								required
 							/>
 						</div>
-						<Link className="text-xs text-blue-400 hover:underline">
-							Forget Password?
-						</Link>
+						<Link className="text-xs hover:underline">Forget Password?</Link>
 						<div className="mt-6">
-							<button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-400 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400">
+							<button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-amber-500 rounded-md hover:bg-amber-600 focus:outline-none">
 								Login
 							</button>
 						</div>
@@ -115,11 +113,11 @@ const Login = () => {
 							</svg>
 						</button>
 					</div>
-					<p className="mt-8 text-sm font-light text-center text-gray-700">
+					<p className="mt-8 text-sm font-light text-center">
 						Don't have an account?{" "}
 						<Link
 							to="/register"
-							className="font-medium text-blue-400 hover:underline"
+							className="font-medium text-yellow-200  hover:underline"
 						>
 							Sign up
 						</Link>

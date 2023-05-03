@@ -9,25 +9,25 @@ const Chefs = ({ chef }) => {
 	console.log(chef);
 	const { chefImage, chefName, ChefExperience, recipes, Likes } = chef;
 	return (
-		<div className="card w-full glass">
+		<div className="card w-full glass transform hover:bg-yellow-600 hover:text-white transition duration-300">
 			<figure>
 				<img className="lg:h-60 lg:w-full" src={chefImage} alt="Chef" />
 			</figure>
 			<div className="card-body">
-				<h2 className="card-title text-lg font-bold text-orange-500 font-serif">
-					Chef Name : <span className="text-black"> {chefName}</span>
+				<h2 className="card-title text-lg font-bold  font-serif">
+					Chef Name : <span className="text-white"> {chefName}</span>
 				</h2>
-				<p className="text-lg font-bold text-orange-500 font-serif">
+				<p className="text-lg font-bold  font-serif">
 					Years of Experience :{" "}
-					<span className="text-black">{ChefExperience}</span>
+					<span className="text-white">{ChefExperience}</span>
 				</p>
-				<p className="text-lg font-bold text-orange-500 font-serif">
-					Total Recipe : <span className="text-black"> {recipes.length}</span>
+				<p className="text-lg font-bold  font-serif">
+					Total Recipe : <span className="text-white"> {recipes.length}</span>
 				</p>
-				<p className="text-lg font-bold text-orange-500 font-serif">
+				<p className="text-lg font-bold  font-serif">
 					Likes :{" "}
-					<span className="text-black gap-5">
-						<FontAwesomeIcon className="text-red-500" icon={faHeart} />
+					<span className="text-white gap-5">
+						<FontAwesomeIcon className="text-yellow-300" icon={faHeart} />
 						<span> {Likes}</span>
 					</span>
 				</p>

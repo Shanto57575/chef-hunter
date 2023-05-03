@@ -60,9 +60,9 @@ const Header = () => {
 						)}
 					</ul>
 				</div>
-				<h1 className="text-2xl  font-serif btn">
+				<h1 className="text-2xl font-serif btn">
 					{" "}
-					The <span className="text-orange-500 font-extrabold">Etalia</span>
+					The <span className="text-white font-extrabold">Etalia</span>
 				</h1>
 			</div>
 			<div className="navbar-center hidden lg:flex">

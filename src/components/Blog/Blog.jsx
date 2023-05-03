@@ -1,13 +1,16 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React from "react";
+import Banner from "../Banner/Banner";
 
 const Blog = () => {
 	return (
 		<div>
+			<Banner></Banner>
+			<h1>Questions</h1>
 			<div
 				tabIndex={0}
-				className="collapse collapse-arrow border border-base-300 bg-slate-500 text-white rounded-box my-5"
+				className="collapse collapse-arrow border-4 border-base-300 rounded-box my-5"
 			>
 				<div className="collapse-title text-xl font-medium">
 					What are the differences between uncontrolled and controlled
@@ -23,7 +26,7 @@ const Blog = () => {
 			</div>
 			<div
 				tabIndex={0}
-				className="collapse collapse-arrow border border-base-300 bg-slate-500 text-white rounded-box my-5"
+				className="collapse collapse-arrow border-4 border-base-300 rounded-box my-5"
 			>
 				<div className="collapse-title text-xl font-medium">
 					How to validate React props using PropTypes ?
@@ -42,7 +45,7 @@ const Blog = () => {
 			</div>
 			<div
 				tabIndex={0}
-				className="collapse collapse-arrow border border-base-300 bg-slate-500 text-white rounded-box my-5"
+				className="collapse collapse-arrow border-4 border-base-300 rounded-box my-5"
 			>
 				<div className="collapse-title text-xl font-medium">
 					What is the difference between nodejs and express js ?
@@ -59,7 +62,7 @@ const Blog = () => {
 			</div>
 			<div
 				tabIndex={0}
-				className="collapse collapse-arrow border border-base-300 bg-slate-500 text-white rounded-box my-5"
+				className="collapse collapse-arrow border-4 border-base-300 rounded-box my-5"
 			>
 				<div className="collapse-title text-xl font-medium">
 					What is a custom hook, and why will you create a custom hook?

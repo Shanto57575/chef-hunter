@@ -12,25 +12,26 @@ const Banner = () => {
 					style={{ filter: "brightness(0.6)" }}
 					src={bannerImage}
 					alt="Banner"
-					className="h-full w-full object-cover "
+					className="h-full w-full object-cover rounded-lg"
 				/>
 			</div>
-			<div className="absolute inset-0 flex items-center justify-center text-center lg:mx-20">
-				<div className="text-4xl font-bold tracking-wide text-center">
-					<div className="lg:mt-12 flex justify-center items-center">
-						<p className="text-base text-white p-2">
-							<span className="font-serif">Welcome to</span>
-							<h1 className="text-2xl text-white font-serif">
-								<span className="text-white font-extrabold">The</span>
-								<span className="text-orange-300 font-extrabold">Etalia,</span>
-							</h1>
-							<span className="font-serif">
-								{" "}
-								Where every dish tells a story of its Italian roots
-							</span>
-						</p>
+			<div className="absolute inset-0 flex items-center justify-center text-center lg:mx-28">
+				<div className="font-bold tracking-wide text-center">
+					<div className="text-base text-white">
+						<span className="font-serif">Welcome to</span>
+						<h1 className="text-2xl text-white font-serif">
+							<span className="text-white font-extrabold">The</span>
+							<span className="text-orange-300 font-extrabold">Etalia,</span>
+						</h1>
+						<span className="font-serif">
+							{" "}
+							Where every dish tells a story of its Italian roots
+						</span>
 					</div>
-					<Marquee speed={100} className="text-base rounded-full  bg-black p-3">
+					<Marquee
+						speed={100}
+						className="text-base rounded-full my-5 bg-black p-3"
+					>
 						<span className="text-white">....Sign Up....</span>
 						to Reserve Your table for any special Date
 						<span className="text-white">....Sign Up....</span>
