@@ -12,10 +12,16 @@ const ChefCard = () => {
 			.then((data) => setChefs(data));
 	}, []);
 	return (
-		<div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-5 my-10">
-			{chefs.map((chef) => (
-				<Chefs key={chef.id} chef={chef}></Chefs>
-			))}
+		<div>
+			<div className="text-center mt-20">
+				<p className="text-xl text-white font-serif mt-5">Experienced Team</p>
+				<h1 className="font-serif text-5xl mt-5 mb-7">Meet Our Chefs !</h1>
+			</div>
+			<div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-5 my-10">
+				{chefs.map((chef) => (
+					<Chefs key={chef.id} chef={chef}></Chefs>
+				))}
+			</div>
 		</div>
 	);
 };
