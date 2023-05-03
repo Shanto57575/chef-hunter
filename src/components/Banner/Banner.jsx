@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import food from "../../assets/italianFood.jpg";
 import Marquee from "react-fast-marquee";
 import bannerImage from "../../assets/italianFood.jpg"; // Import your image file
 
@@ -52,6 +51,9 @@ const Banner = () => {
 							Italian Food brings people together on many different levels. It’s
 							nourishment of the soul and body; it’s truly love
 						</p>
+						<button className="btn my-5 bg-white font-serif font-extrabold">
+							Find A Table
+						</button>
 					</div>
 				</div>
 			</div>

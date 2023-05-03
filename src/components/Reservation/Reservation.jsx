@@ -7,6 +7,9 @@ import {
 	faCalendar,
 	faClock,
 } from "@fortawesome/free-solid-svg-icons";
+import Banner from "../Banner/Banner";
+import ChefCard from "../ChefCard/ChefCard";
+import Catering from "../Catering/Catering";
 
 const Reservation = () => {
 	return (
@@ -14,6 +17,11 @@ const Reservation = () => {
 			<h1 className="text-5xl text-white font-serif mt-5">
 				Reserve Your Table!
 			</h1>
+			<p className="text-sm my-2">
+				Restaurant will be open for all days, Sunday night will be closed, All
+				booking payment is secured with credit card, no charges will be aplly
+				for online booking. no refundable.
+			</p>
 			<p className="font-serif mt-5 mb-7">
 				<span className="text-white">Booking request</span> +88-123-123456{" "}
 				<span className="text-white">or fill out the order form</span>

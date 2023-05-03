@@ -11,6 +11,7 @@ import Login from "./components/Login/Login.jsx";
 import Register from "./components/Register/Register.jsx";
 import AuthProvider from "./Provider/AuthProvider.jsx";
 import SingleChef from "./components/SingleChef/SingleChef.jsx";
+import Error from "./components/Error/Error.jsx";
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -38,7 +39,15 @@ const router = createBrowserRouter([
 				loader: ({ params }) =>
 					fetch(`http://localhost:5000/chef/${params.id}`),
 			},
+			// {
+			// 	path: "*",
+			// 	element: <Error></Error>,
+			// },
 		],
+	},
+	{
+		path: "*",
+		element: <Error></Error>,
 	},
 ]);
 
