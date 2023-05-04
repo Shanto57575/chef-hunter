@@ -15,7 +15,6 @@ const Chefs = ({ chef }) => {
 				<LazyLoad
 					height={200}
 					offset={100}
-					threshold={0.5}
 					debounce={500}
 					throttle={1000}
 					placeholder={<div>Loading...</div>}
