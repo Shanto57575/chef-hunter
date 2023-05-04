@@ -9,7 +9,6 @@ const Login = () => {
 	const [success, setSuccess] = useState(" ");
 	const [error, setError] = useState(" ");
 	const { SignIn, GoogleSignIn, GithubSignIn } = useContext(AuthContext);
-
 	const handleLogin = (event) => {
 		event.preventDefault();
 		const form = event.target;
@@ -49,7 +48,7 @@ const Login = () => {
 
 	return (
 		<div>
-			<Banner></Banner>
+			{/* <Banner></Banner> */}
 			<div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
 				<div className="w-full p-6 m-auto border rounded-md shadow-xl lg:max-w-xl">
 					<h1 className="text-3xl font-semibold text-center uppercase">

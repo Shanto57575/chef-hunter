@@ -5,7 +5,6 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Header = () => {
 	const { user, logOut } = useContext(AuthContext);
-
 	const handleSignOut = () => {
 		logOut()
 			.then(() => {})
@@ -73,9 +72,6 @@ const Header = () => {
 					<Link className="btn btn-ghost normal-case text-xl " to="/blog">
 						Blog
 					</Link>
-					<Link className="btn btn-ghost normal-case text-xl " to="/login">
-						Login
-					</Link>
 					<Link className="btn btn-ghost normal-case text-xl " to="/register">
 						Sign Up
 					</Link>
@@ -90,7 +86,20 @@ const Header = () => {
 				</ul>
 			</div>
 			<div className="navbar-end">
-				<a className="btn">Get started</a>
+				{!user && (
+					<Link className="btn btn-ghost normal-case text-xl " to="/login">
+						Login
+					</Link>
+				)}
+
+				{user && (
+					<img
+						className="rounded-full w-12"
+						src={user ? user.photoURL : ""}
+						alt="profileLoading...."
+						title={user.displayName}
+					/>
+				)}
 			</div>
 		</div>
 	);

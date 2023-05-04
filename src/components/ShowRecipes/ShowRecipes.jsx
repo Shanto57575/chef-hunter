@@ -12,11 +12,13 @@ const ShowRecipes = ({ chefData }) => {
 	const { chefName, ChefsRecipe } = chefData;
 	const chefLastName = chefName.split(" ")[1];
 
+	const [clicked, setClicked] = useState(false);
 	const favClick = () => {
 		toast("Marked as favourite!", {
 			position: toast.POSITION.TOP_CENTER,
 			className: "toast-message",
 		});
+		setClicked(true);
 	};
 
 	return (
@@ -50,7 +52,12 @@ const ShowRecipes = ({ chefData }) => {
 					</p>
 					<div className="card-actions justify-end">
 						<ToastContainer></ToastContainer>
-						<button onClick={favClick} className="btn btn-primary">
+						<button
+							onClick={favClick}
+							disabled={clicked}
+							className="btn btn-primary"
+						>
+							{clicked ? true : false}
 							favourite
 							<FontAwesomeIcon className="text-red-600" icon={faHeart} />
 						</button>
@@ -82,7 +89,12 @@ const ShowRecipes = ({ chefData }) => {
 					</p>
 					<div className="card-actions justify-end">
 						<ToastContainer></ToastContainer>
-						<button onClick={favClick} className="btn btn-primary">
+						<button
+							onClick={favClick}
+							disabled={clicked}
+							className="btn btn-primary"
+						>
+							{clicked ? true : false}
 							favourite
 							<FontAwesomeIcon className="text-red-600" icon={faHeart} />
 						</button>
@@ -114,7 +126,12 @@ const ShowRecipes = ({ chefData }) => {
 					</p>
 					<div className="card-actions justify-end">
 						<ToastContainer></ToastContainer>
-						<button onClick={favClick} className="btn btn-primary">
+						<button
+							onClick={favClick}
+							disabled={clicked}
+							className="btn btn-primary"
+						>
+							{clicked ? true : false}
 							favourite
 							<FontAwesomeIcon className="text-red-600" icon={faHeart} />
 						</button>
@@ -146,7 +163,12 @@ const ShowRecipes = ({ chefData }) => {
 					</p>
 					<div className="card-actions justify-end">
 						<ToastContainer></ToastContainer>
-						<button onClick={favClick} className="btn btn-primary">
+						<button
+							onClick={favClick}
+							disabled={clicked}
+							className="btn btn-primary"
+						>
+							{clicked ? true : false}
 							favourite
 							<FontAwesomeIcon className="text-red-600" icon={faHeart} />
 						</button>
@@ -178,8 +200,12 @@ const ShowRecipes = ({ chefData }) => {
 					</p>
 					<div className="card-actions justify-end">
 						<ToastContainer></ToastContainer>
-						<button onClick={favClick} className="btn btn-primary">
-							favourite
+						<button
+							onClick={favClick}
+							disabled={clicked}
+							className="btn btn-primary"
+						>
+							{clicked ? true : false} favourite
 							<FontAwesomeIcon className="text-red-600" icon={faHeart} />
 						</button>
 					</div>
