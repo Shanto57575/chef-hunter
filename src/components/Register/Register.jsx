@@ -63,7 +63,7 @@ const Register = () => {
 		<div>
 			<Marquee
 				speed={100}
-				className="text-base rounded-full bg-stone-800 p-3 w-[40%] my-5"
+				className="text-base rounded-full bg-stone-800 p-3 w-[40%] my-5 font-serif font-extrabold"
 			>
 				<span className="text-white">....Sign Up....</span>
 				to Reserve Your table for any special Date
