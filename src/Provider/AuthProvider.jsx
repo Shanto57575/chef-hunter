@@ -15,7 +15,9 @@ import app from "../Firebase/firebase.config";
 import { useEffect } from "react";
 
 export const AuthContext = createContext(null);
+
 const auth = getAuth(app);
+
 const provider = new GoogleAuthProvider();
 const gitProvider = new GithubAuthProvider();
 

@@ -1,10 +1,14 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import "firebase/auth";
 
 const Header = () => {
 	const { user, logOut } = useContext(AuthContext);
+
+	const location = useLocation();
+
 	const handleSignOut = () => {
 		logOut()
 			.then(() => {})
@@ -61,45 +65,66 @@ const Header = () => {
 				</div>
 				<h1 className="md:text-2xl font-serif md:btn">
 					{" "}
-					The <span className="text-white font-extrabold">Etalia</span>
+					The <span className="text-white md:font-extrabold">Etalia</span>
 				</h1>
 			</div>
-			<div className="navbar-center hidden lg:flex">
-				<ul className="menu menu-horizontal px-1">
-					<Link className="btn btn-ghost normal-case text-xl " to="/">
-						Home
-					</Link>
-					<Link className="btn btn-ghost normal-case text-xl " to="/blog">
-						Blog
-					</Link>
-					<Link className="btn btn-ghost normal-case text-xl " to="/login">
-						Login
-					</Link>
-					<Link className="btn btn-ghost normal-case text-xl " to="/register">
-						Sign Up
-					</Link>
-					{user && (
-						<button
-							className="btn btn-ghost normal-case text-xl "
-							onClick={handleSignOut}
-						>
-							Sign Out
-						</button>
-					)}{" "}
-				</ul>
-			</div>
 			<div className="navbar-end">
+				<div className="hidden lg:flex">
+					<ul className="menu menu-horizontal px-1">
+						<NavLink
+							className={`btn btn-ghost normal-case text-xl  ${
+								location.pathname === "/" ? "text-white" : ""
+							}`}
+							to="/"
+							isActive={() => location.pathname === "/"}
+						>
+							Home
+						</NavLink>
+						<Link
+							className={`btn btn-ghost normal-case text-xl ${
+								location.pathname === "/blog" ? "text-white" : " "
+							}`}
+							to="/blog"
+							isActive={() => location.pathname === "/blog"}
+						>
+							Blog
+						</Link>
+						<Link
+							className={`btn btn-ghost normal-case text-xl ${
+								location.pathname === "/register" ? "text-white" : " "
+							}`}
+							to="/register"
+							isActive={() => location.pathname === "/register"}
+						>
+							Sign Up
+						</Link>
+						{user && (
+							<button
+								className="btn btn-ghost normal-case text-xl "
+								onClick={handleSignOut}
+							>
+								Sign Out
+							</button>
+						)}{" "}
+					</ul>
+				</div>
 				{!user && (
-					<Link className="btn btn-ghost normal-case text-xl " to="/login">
-						Login
+					<Link
+						className={`btn btn-ghost normal-case text-xl ${
+							location.pathname === "/login" ? "text-white" : " "
+						}`}
+						to="/login"
+						isActive={() => location.pathname === "/login"}
+					>
+						Sign In
 					</Link>
 				)}
 
 				{user && (
 					<img
-						className="rounded-full w-12"
+						className="rounded-full text-xs w-12"
 						src={user ? user.photoURL : ""}
-						alt="profileLoading...."
+						alt="profile"
 						title={user.displayName}
 					/>
 				)}

@@ -1,14 +1,16 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import Banner from "../Banner/Banner";
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
+	const { SignIn, GoogleSignIn, GithubSignIn } = useContext(AuthContext);
+
 	const [success, setSuccess] = useState(" ");
 	const [error, setError] = useState(" ");
-	const { SignIn, GoogleSignIn, GithubSignIn } = useContext(AuthContext);
 
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -25,11 +27,12 @@ const Login = () => {
 			.then(() => {
 				setSuccess("Successfully logged in!!!");
 				navigate(from, { replace: true });
+				form.reset();
 			})
 			.catch((error) => {
-				setError(error.message);
+				toast.error("Invalid Email or Password!!!");
+				setError("Invalid Email or Password!!!");
 			});
-		form.reset();
 		console.log(email, password);
 	};
 
@@ -38,9 +41,11 @@ const Login = () => {
 			.then(() => {
 				setSuccess("Successfully logged in!!!");
 				navigate(from, { replace: true });
+				form.reset();
 			})
 			.catch((error) => {
-				setError(error.message);
+				toast.error("Invalid Email or Password!!!");
+				setError("Invalid Email or Password!!!");
 			});
 	};
 
@@ -49,21 +54,23 @@ const Login = () => {
 			.then(() => {
 				setSuccess("Successfully logged in!!!");
 				navigate(from, { replace: true });
+				form.reset();
 			})
 			.catch((error) => {
-				setError(error.message);
+				toast.error("Invalid Email or Password!!!");
+				setError("Invalid Email or Password!!!");
 			});
 	};
 
 	return (
 		<div>
-			{/* <Banner></Banner> */}
 			<div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
 				<div className="w-full p-6 m-auto border rounded-md shadow-xl lg:max-w-xl">
 					<h1 className="text-3xl font-semibold text-center uppercase">
 						Sign in
 					</h1>
 					<form onSubmit={handleLogin} className="mt-6">
+						<ToastContainer></ToastContainer>
 						<div className="mb-2">
 							<label className="block text-sm font-semibold">Email</label>
 							<input
@@ -95,6 +102,7 @@ const Login = () => {
 						<div className="absolute px-5 bg-white">Or</div>
 					</div>
 					<div className="flex mt-4 gap-x-2">
+						<ToastContainer></ToastContainer>
 						<button
 							onClick={handleGoogle}
 							type="button"
@@ -112,6 +120,7 @@ const Login = () => {
 							onClick={handleGithub}
 							className="flex items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-blue-400"
 						>
+							<ToastContainer></ToastContainer>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 32 32"
