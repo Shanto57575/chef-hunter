@@ -13,6 +13,7 @@ import AuthProvider from "./Provider/AuthProvider.jsx";
 import SingleChef from "./components/SingleChef/SingleChef.jsx";
 import Error from "./components/Error/Error.jsx";
 import ShowRecipes from "./components/ShowRecipes/ShowRecipes.jsx";
+import PrivateRoute from "./routes/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
 	{
@@ -37,7 +38,12 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/chef/:id",
-				element: <SingleChef></SingleChef>,
+				element: (
+					<PrivateRoute>
+						{" "}
+						<SingleChef></SingleChef>
+					</PrivateRoute>
+				),
 				loader: ({ params }) =>
 					fetch(`http://localhost:5000/chef/${params.id}`),
 			},

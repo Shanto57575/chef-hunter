@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Banner from "../Banner/Banner";
 
@@ -9,6 +9,12 @@ const Login = () => {
 	const [success, setSuccess] = useState(" ");
 	const [error, setError] = useState(" ");
 	const { SignIn, GoogleSignIn, GithubSignIn } = useContext(AuthContext);
+
+	const navigate = useNavigate();
+	const location = useLocation();
+
+	const from = location?.state?.from?.pathname || "/";
+
 	const handleLogin = (event) => {
 		event.preventDefault();
 		const form = event.target;
@@ -18,6 +24,7 @@ const Login = () => {
 		SignIn(email, password)
 			.then(() => {
 				setSuccess("Successfully logged in!!!");
+				navigate(from, { replace: true });
 			})
 			.catch((error) => {
 				setError(error.message);
@@ -30,6 +37,7 @@ const Login = () => {
 		GoogleSignIn()
 			.then(() => {
 				setSuccess("Successfully logged in!!!");
+				navigate(from, { replace: true });
 			})
 			.catch((error) => {
 				setError(error.message);
@@ -40,6 +48,7 @@ const Login = () => {
 		GithubSignIn()
 			.then(() => {
 				setSuccess("Successfully logged in!!!");
+				navigate(from, { replace: true });
 			})
 			.catch((error) => {
 				setError(error.message);

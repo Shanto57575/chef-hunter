@@ -22,6 +22,7 @@ const gitProvider = new GithubAuthProvider();
 // eslint-disable-next-line react/prop-types
 const AuthProvider = ({ children }) => {
 	const [user, setUser] = useState(null);
+	const [loading, setLoading] = useState(true);
 
 	const createUser = (email, password) => {
 		return createUserWithEmailAndPassword(auth, email, password);
@@ -46,6 +47,7 @@ const AuthProvider = ({ children }) => {
 	useEffect(() => {
 		const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
 			setUser(currentUser);
+			setLoading(false);
 		});
 
 		return () => {
@@ -54,6 +56,7 @@ const AuthProvider = ({ children }) => {
 	}, []);
 
 	const authInfo = {
+		loading,
 		user,
 		createUser,
 		SignIn,
