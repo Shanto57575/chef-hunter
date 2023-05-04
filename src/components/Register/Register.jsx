@@ -5,7 +5,7 @@ import { getAuth } from "firebase/auth";
 import app from "../../Firebase/firebase.config";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import Banner from "../Banner/Banner";
+import Marquee from "react-fast-marquee";
 
 const auth = getAuth(app);
 const user = auth.currentUser;
@@ -61,7 +61,16 @@ const Register = () => {
 	};
 	return (
 		<div>
-			<Banner></Banner>
+			<Marquee
+				speed={100}
+				className="text-base rounded-full bg-stone-800 p-3 w-[40%] my-5"
+			>
+				<span className="text-white">....Sign Up....</span>
+				to Reserve Your table for any special Date
+				<span className="text-white">....Sign Up....</span>
+				to Reserve Your table for any special Date
+			</Marquee>
+
 			<div className="relative flex flex-col justify-center min-h-screen overflow-hidden my-10">
 				<div className="w-full p-6 m-auto border rounded-md shadow-xl lg:max-w-xl">
 					<h1 className="text-3xl font-semibold text-center  uppercase">

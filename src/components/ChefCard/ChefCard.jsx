@@ -6,7 +6,7 @@ import Chefs from "./Chefs";
 const ChefCard = () => {
 	const [chefs, setChefs] = useState(null);
 	useEffect(() => {
-		fetch("http://localhost:5000/chef")
+		fetch("https://chief-recipe-hunter-server-shanto57575.vercel.app/chef")
 			.then((res) => res.json())
 			.then((data) => setChefs(data));
 	}, []);

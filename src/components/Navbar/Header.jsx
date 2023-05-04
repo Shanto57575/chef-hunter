@@ -59,7 +59,7 @@ const Header = () => {
 						)}
 					</ul>
 				</div>
-				<h1 className="text-2xl font-serif btn">
+				<h1 className="md:text-2xl font-serif md:btn">
 					{" "}
 					The <span className="text-white font-extrabold">Etalia</span>
 				</h1>
