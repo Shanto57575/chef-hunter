@@ -7,9 +7,6 @@ import {
 	faCalendar,
 	faClock,
 } from "@fortawesome/free-solid-svg-icons";
-import Banner from "../Banner/Banner";
-import ChefCard from "../ChefCard/ChefCard";
-import Catering from "../Catering/Catering";
 
 const Reservation = () => {
 	return (

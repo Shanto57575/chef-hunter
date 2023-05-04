@@ -14,6 +14,7 @@ import SingleChef from "./components/SingleChef/SingleChef.jsx";
 import Error from "./components/Error/Error.jsx";
 import ShowRecipes from "./components/ShowRecipes/ShowRecipes.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
+import Reservation from "./components/Reservation/Reservation.jsx";
 
 const router = createBrowserRouter([
 	{
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
 			{
 				path: "/register",
 				element: <Register></Register>,
+			},
+			{
+				path: "/reservation",
+				element: <Reservation></Reservation>,
 			},
 			{
 				path: "/chef/:id",

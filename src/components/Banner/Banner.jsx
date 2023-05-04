@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
-import Marquee from "react-fast-marquee";
+import React, { useRef } from "react";
 import bannerImage from "../../assets/italianFood.jpg"; // Import your image file
+import { Link } from "react-router-dom";
 
 const Banner = () => {
 	return (
@@ -27,12 +27,6 @@ const Banner = () => {
 							Where every dish tells a story of its Italian roots
 						</span>
 					</div>
-					{/* <Marquee speed={100} className="text-base bg-black p-3 w-[40%] my-5">
-						<span className="text-white">....Sign Up....</span>
-						to Reserve Your table for any special Date
-						<span className="text-white">....Sign Up....</span>
-						to Reserve Your table for any special Date
-					</Marquee> */}
 					<div>
 						<div className="text-base font-serif">
 							<span className="text-white">
