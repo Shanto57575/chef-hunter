@@ -15,11 +15,17 @@ const Chefs = ({ chef }) => {
 			</figure>
 			<div className="card-body">
 				<h2 className="card-title text-lg font-bold  font-serif">
-					Chef Name : <span className="text-white"> {chefName}</span>
+					Chef Name :{" "}
+					<span className="text-white">
+						{" "}
+						{chefName ? chefName : "keek Firdausi"}
+					</span>
 				</h2>
 				<p className="text-lg font-bold  font-serif">
 					Years of Experience :{" "}
-					<span className="text-white">{ChefExperience}</span>
+					<span className="text-white">
+						{ChefExperience ? ChefExperience : 7}
+					</span>
 				</p>
 				<p className="text-lg font-bold  font-serif">
 					Total Recipe : <span className="text-white"> {recipes.length}</span>
@@ -28,12 +34,12 @@ const Chefs = ({ chef }) => {
 					Likes :{" "}
 					<span className="text-white gap-5">
 						<FontAwesomeIcon className="text-yellow-300" icon={faHeart} />
-						<span> {Likes}</span>
+						<span> {Likes ? Likes : 96912379}</span>
 					</span>
 				</p>
 				<div className="card-actions justify-end">
 					<Link to={`/chef/${id}`}>
-						<button className="btn btn-primary">View Recipes</button>
+						<button className="btn btn-primary">Chef Details</button>
 					</Link>
 				</div>
 			</div>
