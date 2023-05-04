@@ -72,6 +72,9 @@ const Header = () => {
 					<Link className="btn btn-ghost normal-case text-xl " to="/blog">
 						Blog
 					</Link>
+					<Link className="btn btn-ghost normal-case text-xl " to="/login">
+						Login
+					</Link>
 					<Link className="btn btn-ghost normal-case text-xl " to="/register">
 						Sign Up
 					</Link>
