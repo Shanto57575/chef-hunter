@@ -10,7 +10,7 @@ const Chefs = ({ chef }) => {
 	console.log(chef);
 	const { id, chefImage, chefName, ChefExperience, recipes, Likes } = chef;
 	return (
-		<div className="card w-full glass transform hover:bg-yellow-700 hover:text-white transition duration-500">
+		<div className="card w-full glass transform hover:bg-stone-700 transition duration-500">
 			<figure>
 				<LazyLoad
 					height={200}
@@ -22,7 +22,7 @@ const Chefs = ({ chef }) => {
 					<img className="lg:w-full" src={chefImage} alt="Chef" />
 				</LazyLoad>
 			</figure>
-			<div className="card-body text-center md:text-start">
+			<div className="card-body text-start">
 				<h2 className="card-title text-lg lg:font-bold font-serif">
 					Chef Name :{" "}
 					<span className="text-white">

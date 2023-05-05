@@ -24,7 +24,6 @@ const Catering = () => {
 							src="https://media.istockphoto.com/id/948116034/photo/he-s-got-a-special-cooking-skill.jpg?s=612x612&w=0&k=20&c=bQ2XsJnDJYPZnmN52adBrQCbyKV06A4Edh8U90Vrukc="
 							alt=""
 						/>
-						{/* <FontAwesomeIcon className="h-24" icon={faUtensils} />{" "} */}
 					</figure>
 					<div className="card-body">
 						<h3 className="text-center text-white font-bold">Skilled Chefs</h3>
