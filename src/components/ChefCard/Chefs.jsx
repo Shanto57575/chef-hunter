@@ -19,7 +19,7 @@ const Chefs = ({ chef }) => {
 					throttle={1000}
 					placeholder={<div>Loading...</div>}
 				>
-					<img className="lg:h-60 lg:w-full" src={chefImage} alt="Chef" />
+					<img className="lg:w-full" src={chefImage} alt="Chef" />
 				</LazyLoad>
 			</figure>
 			<div className="card-body text-center md:text-start">

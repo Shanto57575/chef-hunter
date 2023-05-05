@@ -43,7 +43,8 @@ const Register = () => {
 				setSuccess("Account created successfully!!!");
 				updateProfile(result.user, {
 					displayName: name,
-					photoURL: "https://ibb.co/cL1xhkz",
+					photoURL:
+						"https://media.istockphoto.com/id/1388645967/photo/pensive-thoughtful-contemplating-caucasian-young-man-thinking-about-future-planning-new.jpg?b=1&s=170667a&w=0&k=20&c=iSQUfWESVgOxHtV5X7lrNxxzaf4b7fMrmI3dXxrFNbQ=",
 				})
 					.then(() => {
 						console.log("all okkkkkkkkkk");

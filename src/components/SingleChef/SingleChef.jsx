@@ -10,15 +10,19 @@ const SingleChef = () => {
 		chefData;
 
 	return (
-		<div>
+		<div className="mt-28">
 			<h1 className="text-5xl text-center font-serif font-extrabold my-10">
 				<span className="text-white">Meet</span> {chefName}!
 			</h1>
-			<div className="card lg:card-side hover:bg-yellow-600 hover:text-white shadow-2xl lg:grid lg:grid-cols-2 mb-16">
-				<figure className="lg:h-full lg:px-5">
-					<img src={chefImage ? chefImage : "Image Not Found"} alt="Movie" />
+			<div className="card lg:card-side hover:text-white shadow-2xl lg:grid lg:grid-cols-2 mb-16">
+				<figure className="h-full mb-2 w-full mx-auto lg:px-5">
+					<img
+						className="rounded-xl"
+						src={chefImage ? chefImage : "Image Not Found"}
+						alt="Movie"
+					/>
 				</figure>
-				<div className="card-body font-serif font-extrabold">
+				<div className="card-body hover:bg-stone-800 rounded-xl font-serif font-extrabold">
 					<h2 className="card-title">
 						MasterChef : {chefName ? chefName : "Kea Firdausi"}
 					</h2>

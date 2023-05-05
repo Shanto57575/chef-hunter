@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useRef } from "react";
 import bannerImage from "../../assets/italianFood.jpg"; // Import your image file
-import { Link } from "react-router-dom";
 
 const Banner = () => {
 	const handleClick = () => {

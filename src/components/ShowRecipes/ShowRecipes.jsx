@@ -27,11 +27,15 @@ const ShowRecipes = ({ chefData }) => {
 				{chefLastName}'s{" "}
 				<span className="text-white text-xl">Delectable Delicacy.....</span>
 			</h1>
-			<div className="card flex lg:card-side bg-base-100 my-10 border shadow-2xl">
-				<figure className="h-80 w-[50%]">
-					<img src={ChefsRecipe?.food1?.foodImg} alt="Movie" />
+			<div className="card lg:flex lg:card-side bg-base-100 my-10 border shadow-2xl">
+				<figure className="lg:h-full my-auto lg:ms-2 lg:w-[50%]">
+					<img
+						className="rounded-xl"
+						src={ChefsRecipe?.food1?.foodImg}
+						alt="Movie"
+					/>
 				</figure>
-				<div className="card-body w-[50%]">
+				<div className="card-body hover:bg-stone-800 lg:my-1 rounded-xl lg:w-[50%]">
 					<h2 className="card-title">{ChefsRecipe?.food1?.recipeName}</h2>
 					<div>
 						<p className="text-white font-serif text-2xl underline">
@@ -65,10 +69,14 @@ const ShowRecipes = ({ chefData }) => {
 				</div>
 			</div>
 			<div className="card flex lg:card-side bg-base-100 my-10 border shadow-2xl">
-				<figure className="h-80 w-[50%]">
-					<img src={ChefsRecipe?.food2?.foodImg} alt="Movie" />
+				<figure className="lg:h-full my-auto lg:ms-2 lg:w-[50%]">
+					<img
+						className="rounded-xl"
+						src={ChefsRecipe?.food2?.foodImg}
+						alt="Movie"
+					/>
 				</figure>
-				<div className="card-body w-[50%]">
+				<div className="card-body hover:bg-stone-800 lg:my-1 rounded-xl lg:w-[50%]">
 					<h2 className="card-title">{ChefsRecipe?.food1?.recipeName}</h2>
 					<div>
 						<p className="text-white font-serif text-2xl underline">
@@ -102,10 +110,14 @@ const ShowRecipes = ({ chefData }) => {
 				</div>
 			</div>
 			<div className="card flex lg:card-side bg-base-100 my-10 border shadow-2xl">
-				<figure className="h-80 w-[50%]">
-					<img src={ChefsRecipe?.food3?.foodImg} alt="Movie" />
+				<figure className="lg:h-full my-auto lg:ms-2 lg:w-[50%]">
+					<img
+						className="rounded-xl"
+						src={ChefsRecipe?.food3?.foodImg}
+						alt="Movie"
+					/>
 				</figure>
-				<div className="card-body w-[50%]">
+				<div className="card-body hover:bg-stone-800 lg:my-1 rounded-xl lg:w-[50%]">
 					<h2 className="card-title">{ChefsRecipe?.food1?.recipeName}</h2>
 					<div>
 						<p className="text-white font-serif text-2xl underline">
@@ -139,10 +151,14 @@ const ShowRecipes = ({ chefData }) => {
 				</div>
 			</div>
 			<div className="card flex lg:card-side bg-base-100 my-10 border shadow-2xl">
-				<figure className="h-80 w-[50%]">
-					<img src={ChefsRecipe?.food4?.foodImg} alt="Movie" />
+				<figure className="lg:h-full my-auto lg:ms-2 lg:w-[50%]">
+					<img
+						className="rounded-xl"
+						src={ChefsRecipe?.food4?.foodImg}
+						alt="Movie"
+					/>
 				</figure>
-				<div className="card-body w-[50%]">
+				<div className="card-body hover:bg-stone-800 lg:my-1 rounded-xl lg:w-[50%]">
 					<h2 className="card-title">{ChefsRecipe?.food1?.recipeName}</h2>
 					<div>
 						<p className="text-white font-serif text-2xl underline">
@@ -176,10 +192,14 @@ const ShowRecipes = ({ chefData }) => {
 				</div>
 			</div>
 			<div className="card flex lg:card-side bg-base-100 my-10 border shadow-2xl">
-				<figure className="h-80 w-[50%]">
-					<img src={ChefsRecipe?.food5?.foodImg} alt="Movie" />
+				<figure className="lg:h-full my-auto lg:ms-2 lg:w-[50%]">
+					<img
+						className="rounded-xl"
+						src={ChefsRecipe?.food5?.foodImg}
+						alt="Movie"
+					/>
 				</figure>
-				<div className="card-body w-[50%]">
+				<div className="card-body hover:bg-stone-800 lg:my-1 rounded-xl lg:w-[50%]">
 					<h2 className="card-title">{ChefsRecipe?.food1?.recipeName}</h2>
 					<div>
 						<p className="text-white font-serif text-2xl underline">

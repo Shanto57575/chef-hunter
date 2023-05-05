@@ -29,7 +29,7 @@ const Login = () => {
 				navigate(from, { replace: true });
 				form.reset();
 			})
-			.catch((error) => {
+			.catch(() => {
 				toast.error("Invalid Email or Password!!!");
 				setError("Invalid Email or Password!!!");
 			});
@@ -43,7 +43,7 @@ const Login = () => {
 				navigate(from, { replace: true });
 				form.reset();
 			})
-			.catch((error) => {
+			.catch(() => {
 				toast.error("Invalid Email or Password!!!");
 				setError("Invalid Email or Password!!!");
 			});
@@ -56,7 +56,7 @@ const Login = () => {
 				navigate(from, { replace: true });
 				form.reset();
 			})
-			.catch((error) => {
+			.catch(() => {
 				toast.error("Invalid Email or Password!!!");
 				setError("Invalid Email or Password!!!");
 			});

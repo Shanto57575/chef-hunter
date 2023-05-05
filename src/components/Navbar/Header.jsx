@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import "firebase/auth";
 
@@ -18,7 +18,7 @@ const Header = () => {
 	};
 
 	return (
-		<div className="navbar bg-stone-700 font-serif font-extrabold rounded-lg my-5 p-3">
+		<div className="navbar fixed top-0 left-0 w-full z-50 bg-stone-700 font-serif font-extrabold mb-10 p-3">
 			<div className="navbar-start">
 				<div className="dropdown">
 					<label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -149,7 +149,7 @@ const Header = () => {
 				{user && (
 					<img
 						className="rounded-full text-xs w-12"
-						src={user ? user.photoURL : ""}
+						src={user ? user.photoURL : "loading"}
 						alt="profile"
 						title={user.displayName}
 					/>
