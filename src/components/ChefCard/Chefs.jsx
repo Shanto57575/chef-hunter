@@ -10,7 +10,7 @@ const Chefs = ({ chef }) => {
 	console.log(chef);
 	const { id, chefImage, chefName, ChefExperience, recipes, Likes } = chef;
 	return (
-		<div className="card w-full glass transform hover:bg-yellow-600 hover:text-white transition duration-300">
+		<div className="card w-full glass transform hover:bg-yellow-700 hover:text-white transition duration-500">
 			<figure>
 				<LazyLoad
 					height={200}
@@ -22,24 +22,24 @@ const Chefs = ({ chef }) => {
 					<img className="lg:h-60 lg:w-full" src={chefImage} alt="Chef" />
 				</LazyLoad>
 			</figure>
-			<div className="card-body">
-				<h2 className="card-title text-lg font-bold  font-serif">
+			<div className="card-body text-center md:text-start">
+				<h2 className="card-title text-lg lg:font-bold font-serif">
 					Chef Name :{" "}
 					<span className="text-white">
 						{" "}
 						{chefName ? chefName : "keek Firdausi"}
 					</span>
 				</h2>
-				<p className="text-lg font-bold  font-serif">
+				<p className="text-lg md:font-bold font-serif">
 					Years of Experience :{" "}
 					<span className="text-white">
 						{ChefExperience ? ChefExperience : 7}
 					</span>
 				</p>
-				<p className="text-lg font-bold  font-serif">
+				<p className="text-lg md:font-bold  font-serif">
 					Total Recipe : <span className="text-white"> {recipes.length}</span>
 				</p>
-				<p className="text-lg font-bold  font-serif">
+				<p className="text-lg md:font-bold font-serif">
 					Likes :{" "}
 					<span className="text-white gap-5">
 						<FontAwesomeIcon className="text-yellow-300" icon={faHeart} />
@@ -48,7 +48,7 @@ const Chefs = ({ chef }) => {
 				</p>
 				<div className="card-actions justify-end">
 					<Link to={`/chef/${id}`}>
-						<button className="btn btn-primary">Chef Details</button>
+						<button className="btn btn-primary">View Recipes</button>
 					</Link>
 				</div>
 			</div>

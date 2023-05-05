@@ -1,23 +1,24 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React, { useContext, useState } from "react";
-import { getAuth } from "firebase/auth";
-import app from "../../Firebase/firebase.config";
+import React, { useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Marquee from "react-fast-marquee";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-	const { createUser } = useContext(AuthContext);
+	const { createUser, user } = useContext(AuthContext);
 
 	const [success, setSuccess] = useState(" ");
 	const [error, setError] = useState(" ");
 
+	const emailRef = useRef();
+
 	const handleRegister = (event) => {
+		event.preventDefault();
+
 		setSuccess(" ");
 		setError(" ");
-
-		event.preventDefault();
 
 		const form = event.target;
 		const name = form.name.value;
@@ -31,23 +32,25 @@ const Register = () => {
 		} else if (password !== confirm) {
 			setError("Password didn't Match!!!");
 			return;
-			// } else if (!/[A-Z]/.test(password)) {
-			// 	setError("Password must contain at least one uppercase letter.");
-			// 	return;
-			// } else if (!/[a-z]/.test(password)) {
-			// 	setError("Password must contain at least one lowercase letter.");
-			// 	return;
-			// } else if (!/[0-9]/.test(password)) {
-			// 	setError("Password must contain at least one number");
-			// 	return;
 		} else if (!/[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password)) {
 			setError("Password must have at least one special character.");
 			return;
 		}
 
 		createUser(email, password)
-			.then(() => {
+			.then((result) => {
+				console.log(result.user);
 				setSuccess("Account created successfully!!!");
+				updateProfile(result.user, {
+					displayName: name,
+					photoURL: "https://ibb.co/cL1xhkz",
+				})
+					.then(() => {
+						console.log("all okkkkkkkkkk");
+					})
+					.catch((error) => {
+						console.log("Shahin dhore fel error take");
+					});
 			})
 			.catch((error) => {
 				setError(error.message);
@@ -61,6 +64,7 @@ const Register = () => {
 		<div className="font-serif font-extrabold">
 			<Marquee
 				speed={100}
+				pauseOnHover="true"
 				className="text-base rounded-full bg-stone-700 p-4 w-[40%] my-5 font-serif font-extrabold"
 			>
 				<span className="text-white">....Sign Up....</span>
@@ -90,6 +94,7 @@ const Register = () => {
 						<div className="mb-2">
 							<label className="block text-sm font-semibold">Email</label>
 							<input
+								ref={emailRef}
 								name="email"
 								type="email"
 								placeholder="Email"

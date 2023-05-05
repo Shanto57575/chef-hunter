@@ -41,16 +41,42 @@ const Header = () => {
 						tabIndex={0}
 						className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 					>
-						<Link className="btn btn-ghost normal-case text-xl" to="/">
+						<Link
+							className={`btn btn-ghost normal-case text-xl  ${
+								location.pathname === "/" ? "text-white" : ""
+							}`}
+							to="/"
+							isActive={() => location.pathname === "/"}
+						>
 							Home
 						</Link>
-						<Link className="btn btn-ghost normal-case text-xl " to="/blog">
+						<Link
+							className={`btn btn-ghost normal-case text-xl ${
+								location.pathname === "/blog" ? "text-white" : " "
+							}`}
+							to="/blog"
+							isActive={() => location.pathname === "/blog"}
+						>
 							Blog
 						</Link>
-						<Link className="btn btn-ghost normal-case text-xl " to="/login">
-							Login
-						</Link>
-						<Link className="btn btn-ghost normal-case text-xl " to="/register">
+						{!user && (
+							<Link
+								className={`btn btn-ghost normal-case text-xl ${
+									location.pathname === "/login" ? "text-white" : " "
+								}`}
+								to="/login"
+								isActive={() => location.pathname === "/login"}
+							>
+								Sign In
+							</Link>
+						)}
+						<Link
+							className={`btn btn-ghost normal-case text-xl ${
+								location.pathname === "/register" ? "text-white" : " "
+							}`}
+							to="/register"
+							isActive={() => location.pathname === "/register"}
+						>
 							Sign Up
 						</Link>
 						{user && (
@@ -71,7 +97,7 @@ const Header = () => {
 			<div className="navbar-end">
 				<div className="hidden lg:flex">
 					<ul className="menu menu-horizontal px-1">
-						<NavLink
+						<Link
 							className={`btn btn-ghost normal-case text-xl  ${
 								location.pathname === "/" ? "text-white" : ""
 							}`}
@@ -79,7 +105,7 @@ const Header = () => {
 							isActive={() => location.pathname === "/"}
 						>
 							Home
-						</NavLink>
+						</Link>
 						<Link
 							className={`btn btn-ghost normal-case text-xl ${
 								location.pathname === "/blog" ? "text-white" : " "
