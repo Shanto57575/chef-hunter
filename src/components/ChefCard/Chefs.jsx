@@ -10,7 +10,7 @@ const Chefs = ({ chef }) => {
 	console.log(chef);
 	const { id, chefImage, chefName, ChefExperience, recipes, Likes } = chef;
 	return (
-		<div className="card w-full glass transform hover:bg-stone-700 transition duration-500">
+		<div className="card w-full glass transform hover:bg-stone-700 hover:text-amber-400 hover:font-extrabold transition duration-500">
 			<figure>
 				<LazyLoad
 					height={200}
@@ -48,7 +48,9 @@ const Chefs = ({ chef }) => {
 				</p>
 				<div className="card-actions justify-end">
 					<Link to={`/chef/${id}`}>
-						<button className="btn btn-primary">View Recipes</button>
+						<button className="btn btn-active border-white">
+							View Recipes
+						</button>
 					</Link>
 				</div>
 			</div>

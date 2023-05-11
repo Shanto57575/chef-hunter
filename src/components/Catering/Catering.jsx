@@ -21,6 +21,7 @@ const Catering = () => {
 				<div className="card lg:w-64 my-5 glass transform hover:bg-yellow-600 hover:text-white transition duration-300">
 					<figure className="h-40">
 						<img
+							style={{ filter: "brightness(0.8)" }}
 							src="https://media.istockphoto.com/id/948116034/photo/he-s-got-a-special-cooking-skill.jpg?s=612x612&w=0&k=20&c=bQ2XsJnDJYPZnmN52adBrQCbyKV06A4Edh8U90Vrukc="
 							alt=""
 						/>
@@ -33,6 +34,7 @@ const Catering = () => {
 				<div className="card lg:w-64 my-5 glass transform hover:bg-yellow-600 hover:text-white transition duration-300">
 					<figure className="h-40">
 						<img
+							style={{ filter: "brightness(0.8)" }}
 							src="https://media.istockphoto.com/id/1471434168/photo/splashes-and-vegetables.jpg?s=612x612&w=0&k=20&c=xv0YMpkYnh9YSaOUjfo0Iw4ETt80z6yngZ5hCJVd8nM="
 							alt=""
 						/>
@@ -50,6 +52,7 @@ const Catering = () => {
 				<div className="card lg:w-64 my-5 glass transform hover:bg-yellow-600 hover:text-white transition duration-300">
 					<figure className="h-40">
 						<img
+							style={{ filter: "brightness(0.8)" }}
 							src="https://media.istockphoto.com/id/1283852667/photo/touch-of-fresh-moss-in-the-forest.jpg?s=612x612&w=0&k=20&c=I91IV_It_xDEUlUCOg9hcoEw83ym7Q2-1hsCXtO-l7A="
 							alt=""
 						/>
