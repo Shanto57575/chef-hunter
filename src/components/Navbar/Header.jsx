@@ -107,6 +107,15 @@ const Header = () => {
 							Home
 						</Link>
 						<Link
+							className={`btn btn-ghost normal-case text-xl  ${
+								location.pathname === "/about" ? "text-white" : ""
+							}`}
+							to="/about"
+							isActive={() => location.pathname === "/about"}
+						>
+							About
+						</Link>
+						<Link
 							className={`btn btn-ghost normal-case text-xl ${
 								location.pathname === "/blog" ? "text-white" : " "
 							}`}

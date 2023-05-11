@@ -15,6 +15,7 @@ import Error from "./components/Error/Error.jsx";
 import ShowRecipes from "./components/ShowRecipes/ShowRecipes.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 import Reservation from "./components/Reservation/Reservation.jsx";
+import AboutUs from "./components/About/AboutUs.jsx";
 
 const router = createBrowserRouter([
 	{
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
 			{
 				path: "/",
 				element: <Home></Home>,
+			},
+			{
+				path: "/about",
+				element: <AboutUs></AboutUs>,
 			},
 			{
 				path: "/blog",
