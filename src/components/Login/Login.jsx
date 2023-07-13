@@ -1,10 +1,11 @@
-/* eslint-disable no-undef */
 /* eslint-disable react/no-unescaped-entities */
-/* eslint-disable no-unused-vars */
-import React, { useContext, useState } from "react";
+/* eslint-disable no-undef */
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
+import Lottie from "lottie-react";
+import login from "../../assets/login.json";
 
 const Login = () => {
 	const { SignIn, GoogleSignIn, GithubSignIn } = useContext(AuthContext);
@@ -43,9 +44,9 @@ const Login = () => {
 				navigate(from, { replace: true });
 				form.reset();
 			})
-			.catch(() => {
-				toast.error("Invalid Email or Password!!!");
-				setError("Invalid Email or Password!!!");
+			.catch((error) => {
+				// toast.error("Invalid Email or Password!!!");
+				setError(error.message);
 			});
 	};
 
@@ -56,15 +57,18 @@ const Login = () => {
 				navigate(from, { replace: true });
 				form.reset();
 			})
-			.catch(() => {
+			.catch((error) => {
 				toast.error("Invalid Email or Password!!!");
-				setError("Invalid Email or Password!!!");
+				setError(error.message);
 			});
 	};
 
 	return (
-		<div>
-			<div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
+		<div className="md:flex gap-5">
+			<div className="md:w-1/2">
+				<Lottie animationData={login} loop={true} />
+			</div>
+			<div className="md:w-1/2 relative flex flex-col justify-center min-h-screen overflow-hidden">
 				<div className="w-full p-6 m-auto border rounded-md shadow-xl lg:max-w-xl">
 					<h1 className="text-3xl font-semibold text-center uppercase">
 						Sign in

@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Marquee from "react-fast-marquee";
 import { updateProfile } from "firebase/auth";
+import Lottie from "lottie-react";
+import login from "../../assets/signup.json";
+import Swal from "sweetalert2";
 
 const Register = () => {
 	const { createUser, user } = useContext(AuthContext);
@@ -40,7 +43,15 @@ const Register = () => {
 		createUser(email, password)
 			.then((result) => {
 				console.log(result.user);
-				setSuccess("Account created successfully!!!");
+				Swal.fire({
+					title: "Account created successfully",
+					showClass: {
+						popup: "animate__animated animate__fadeInDown",
+					},
+					hideClass: {
+						popup: "animate__animated animate__fadeOutUp",
+					},
+				});
 				updateProfile(result.user, {
 					displayName: name,
 					photoURL:
@@ -50,16 +61,17 @@ const Register = () => {
 						console.log("all okkkkkkkkkk");
 					})
 					.catch((error) => {
-						console.log("Shahin dhore fel error take");
+						setError(error.message);
 					});
 			})
 			.catch((error) => {
-				setError(error.message);
+				Swal.fire({
+					icon: "error",
+					title: error.message,
+				});
 			});
 
-		// form.reset();
-
-		console.log(name, email, password);
+		form.reset();
 	};
 	return (
 		<div className="font-serif font-extrabold">
@@ -76,84 +88,96 @@ const Register = () => {
 				to Reserve Your table for any special Date
 			</Marquee>
 
-			<div className="relative flex flex-col justify-center min-h-screen overflow-hidden my-10">
-				<div className="w-full p-6 m-auto border rounded-md shadow-xl lg:max-w-xl">
-					<h1 className="text-3xl font-serif font-extrabold text-center uppercase">
-						Create an account
-					</h1>
-					<form onSubmit={handleRegister} className="mt-6">
-						<div className="mb-2">
-							<label className="block text-sm font-semibold ">Name</label>
-							<input
-								type="text"
-								name="name"
-								placeholder="Name"
-								className="block font-normal w-full px-4 py-2 mt-2  bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-								required
-							/>
+			<div className="md:flex gap-5">
+				<div className="md:w-1/2">
+					<Lottie
+						className="md:h-[800px] my-auto"
+						animationData={login}
+						loop={true}
+					/>
+				</div>
+
+				<div className="md:w-1/2 relative flex flex-col justify-center min-h-screen overflow-hidden my-10">
+					<div className="w-full p-6 m-auto border rounded-md shadow-xl lg:max-w-xl">
+						<h1 className="text-3xl font-serif font-extrabold text-center uppercase">
+							Create an account
+						</h1>
+						<form onSubmit={handleRegister} className="mt-6">
+							<div className="mb-2">
+								<label className="block text-sm font-semibold ">Name</label>
+								<input
+									type="text"
+									name="name"
+									placeholder="Name"
+									className="block font-normal w-full px-4 py-2 mt-2  bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+									required
+								/>
+							</div>
+							<div className="mb-2">
+								<label className="block text-sm font-semibold">Email</label>
+								<input
+									ref={emailRef}
+									name="email"
+									type="email"
+									placeholder="Email"
+									className="block font-normal w-full px-4 py-2 mt-2  bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+								/>
+							</div>
+							<div className="mb-2">
+								<label className="block text-sm font-semibold ">Password</label>
+								<input
+									name="password"
+									type="password"
+									placeholder="password"
+									className="block font-normal w-full px-4 py-2 mt-2  bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+									required
+								/>
+							</div>
+							<div className="mb-2">
+								<label className="block text-sm font-semibold ">
+									Confirm Password
+								</label>
+								<input
+									name="confirm"
+									type="password"
+									placeholder="Confirm password"
+									className="block font-normal w-full px-4 py-2 mt-2  bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+									required
+								/>
+							</div>
+							<div className="mb-2">
+								<label className="block text-sm font-semibold ">
+									Photo Url
+								</label>
+								<input
+									name="photo"
+									type="url"
+									placeholder="Photo Url"
+									className="block font-normal w-full px-4 py-2 mt-2  bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+									required
+								/>
+							</div>
+							<div className="mt-6">
+								<button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-amber-600 rounded-md hover:bg-yellow-500 focus:outline-none focus:bg-blue-400">
+									Sign Up
+								</button>
+							</div>
+						</form>
+						<div className="relative flex items-center justify-center w-full mt-6 border border-t">
+							<div className="absolute px-5 bg-white">Or</div>
 						</div>
-						<div className="mb-2">
-							<label className="block text-sm font-semibold">Email</label>
-							<input
-								ref={emailRef}
-								name="email"
-								type="email"
-								placeholder="Email"
-								className="block font-normal w-full px-4 py-2 mt-2  bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-							/>
-						</div>
-						<div className="mb-2">
-							<label className="block text-sm font-semibold ">Password</label>
-							<input
-								name="password"
-								type="password"
-								placeholder="password"
-								className="block font-normal w-full px-4 py-2 mt-2  bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-								required
-							/>
-						</div>
-						<div className="mb-2">
-							<label className="block text-sm font-semibold ">
-								Confirm Password
-							</label>
-							<input
-								name="confirm"
-								type="password"
-								placeholder="Confirm password"
-								className="block font-normal w-full px-4 py-2 mt-2  bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-								required
-							/>
-						</div>
-						<div className="mb-2">
-							<label className="block text-sm font-semibold ">Photo Url</label>
-							<input
-								name="photo"
-								type="url"
-								placeholder="Photo Url"
-								className="block font-normal w-full px-4 py-2 mt-2  bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-								required
-							/>
-						</div>
-						<div className="mt-6">
-							<button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-amber-600 rounded-md hover:bg-yellow-500 focus:outline-none focus:bg-blue-400">
-								Sign Up
-							</button>
-						</div>
-					</form>
-					<div className="relative flex items-center justify-center w-full mt-6 border border-t">
-						<div className="absolute px-5 bg-white">Or</div>
+						<p className="mt-8 text-sm font-light text-center">
+							Already have an account?{" "}
+							<Link
+								to="/login"
+								className="font-medium text-yellow-500  hover:underline"
+							>
+								Please login
+							</Link>
+						</p>
+						<p className="text-center font-bold text-green-500">{success}</p>
+						<p className="text-center font-bold text-red-500">{error}</p>
 					</div>
-					<p className="mt-8 text-sm font-light text-center">
-						Already have an account?{" "}
-						<Link
-							to="/login"
-							className="font-medium text-yellow-500  hover:underline"
-						>
-							Please login
-						</Link>
-					</p>
-					<p className="text-center font-bold text-green-500">{success}</p>
-					<p className="text-center font-bold text-red-500">{error}</p>
 				</div>
 			</div>
 		</div>

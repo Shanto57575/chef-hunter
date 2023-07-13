@@ -2,6 +2,12 @@
 import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { FaHome } from "react-icons/fa";
+import { BiCommentError } from "react-icons/bi";
+import { BsFillJournalBookmarkFill } from "react-icons/bs";
+import { HiOutlineLogin } from "react-icons/hi";
+import { ImEnter } from "react-icons/im";
+
 import "firebase/auth";
 
 const Header = () => {
@@ -18,7 +24,7 @@ const Header = () => {
 	};
 
 	return (
-		<div className="navbar rounded-lg my-5 bg-stone-600 font-serif font-extrabold mb-10 p-3">
+		<div className="navbar fixed z-10 bg-base-200 font-serif font-extrabold p-6">
 			<div className="navbar-start">
 				<div className="dropdown">
 					<label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -48,7 +54,10 @@ const Header = () => {
 							to="/"
 							isActive={() => location.pathname === "/"}
 						>
-							Home
+							<div className="flex items-center gap-2">
+								<FaHome />
+								<span>Home</span>
+							</div>
 						</Link>
 						<Link
 							className={`btn btn-ghost normal-case text-xl  ${
@@ -57,7 +66,9 @@ const Header = () => {
 							to="/about"
 							isActive={() => location.pathname === "/about"}
 						>
-							About
+							<div className="flex items-center gap-2">
+								<BiCommentError /> <span>About</span>
+							</div>
 						</Link>
 						<Link
 							className={`btn btn-ghost normal-case text-xl ${
@@ -66,7 +77,10 @@ const Header = () => {
 							to="/blog"
 							isActive={() => location.pathname === "/blog"}
 						>
-							Blog
+							<div className="flex items-center gap-2">
+								<BsFillJournalBookmarkFill />
+								<span>Blog</span>
+							</div>
 						</Link>
 						{!user && (
 							<Link
@@ -76,7 +90,10 @@ const Header = () => {
 								to="/login"
 								isActive={() => location.pathname === "/login"}
 							>
-								Sign In
+								<div className="flex items-center gap-2">
+									<HiOutlineLogin />
+									<span>Sign In</span>
+								</div>{" "}
 							</Link>
 						)}
 						<Link
@@ -86,7 +103,10 @@ const Header = () => {
 							to="/register"
 							isActive={() => location.pathname === "/register"}
 						>
-							Sign Up
+							<div className="flex items-center gap-2">
+								<ImEnter />
+								<span>Sign Up</span>
+							</div>
 						</Link>
 						{user && (
 							<button
@@ -113,7 +133,10 @@ const Header = () => {
 							to="/"
 							isActive={() => location.pathname === "/"}
 						>
-							Home
+							<div className="flex items-center gap-2">
+								<FaHome />
+								<span>Home</span>
+							</div>
 						</Link>
 						<Link
 							className={`btn btn-ghost normal-case text-xl  ${
@@ -122,7 +145,9 @@ const Header = () => {
 							to="/about"
 							isActive={() => location.pathname === "/about"}
 						>
-							About
+							<div className="flex items-center gap-2">
+								<BiCommentError /> <span>About</span>
+							</div>
 						</Link>
 						<Link
 							className={`btn btn-ghost normal-case text-xl ${
@@ -131,7 +156,10 @@ const Header = () => {
 							to="/blog"
 							isActive={() => location.pathname === "/blog"}
 						>
-							Blog
+							<div className="flex items-center gap-2">
+								<BsFillJournalBookmarkFill />
+								<span>Blog</span>
+							</div>
 						</Link>
 						<Link
 							className={`btn btn-ghost normal-case text-xl ${
@@ -140,7 +168,10 @@ const Header = () => {
 							to="/register"
 							isActive={() => location.pathname === "/register"}
 						>
-							Sign Up
+							<div className="flex items-center gap-2">
+								<ImEnter />
+								<span>Sign Up</span>
+							</div>
 						</Link>
 						{user && (
 							<button
@@ -160,7 +191,10 @@ const Header = () => {
 						to="/login"
 						isActive={() => location.pathname === "/login"}
 					>
-						Sign In
+						<div className="flex items-center gap-2">
+							<HiOutlineLogin />
+							<span>Sign In</span>
+						</div>{" "}
 					</Link>
 				)}
 

@@ -11,6 +11,7 @@ import {
 const Reservation = () => {
 	return (
 		<div
+			name="reserve"
 			id="target-section"
 			className="text-center lg:w-[700px] bg-stone-900 mx-auto my-14 lg:py-16 lg:px-10"
 		>

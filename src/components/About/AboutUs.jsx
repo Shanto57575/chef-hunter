@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 
 const AboutUs = () => {
 	return (
-		<div className="font-serif font-extrabold text-center my-10">
+		<div className="font-serif font-extrabold text-center h-screen">
 			<Marquee speed={200} pauseOnHover={true} className="flex rounded-lg">
 				<img
 					className="h-[150px] rounded-md"
@@ -49,29 +49,24 @@ const AboutUs = () => {
 					className="h-[150px] rounded-md"
 					src="https://media.istockphoto.com/id/1343182422/photo/empty-rustic-design-restaurant-with-wooden-furniture-and-some-decorative-plants.jpg?b=1&s=170667a&w=0&k=20&c=et0uadwZ9NPZbg-t8nRENoJh5I_aqTCVqEhO2kMcywc="
 				/>
-			</Marquee>{" "}
-			<h2 className="mt-10 mb-4">
+			</Marquee>
+			<h2 className="mt-10 mb-4 text-5xl">
 				Welcome to <span className="text-white">The Etalia</span>
 			</h2>
-			<p>
+			<div className="text-justify sm:p-1 md:p-0">
 				Where authentic Italian cuisine meets rustic elegance. Our restaurant is
 				home to a team of expert Italian chefs, each one handpicked from the
 				finest culinary schools in Italy. Their passion for creating delicious,
-				authentic Italian dishes is evident in every bite.
-			</p>
-			<p>
-				Our menu is a carefully curated selection of classic Italian dishes,
-				made with the freshest, highest quality ingredients. From homemade pasta
-				to wood-fired pizza, every dish is a masterpiece that transports you to
-				the heart of Italy.
-			</p>
-			<p>
-				But The Etalia is more than just a restaurant. It's a celebration of all
-				things Italian, a place where people can come together to share their
-				love for good food and good company. Whether it's a romantic dinner for
-				two or a lively family gathering, The Etalia is always the perfect place
-				to create memories and savor the flavors of Italy.
-			</p>
+				authentic Italian dishes is evident in every bite. Our menu is a
+				carefully curated selection of classic Italian dishes, made with the
+				freshest, highest quality ingredients. From homemade pasta to wood-fired
+				pizza, every dish is a masterpiece that transports you to the heart of
+				Italy. But The Etalia is more than just a restaurant. It's a celebration
+				of all things Italian, a place where people can come together to share
+				their love for good food and good company. Whether it's a romantic
+				dinner for two or a lively family gathering, The Etalia is always the
+				perfect place to create memories and savor the flavors of Italy.
+			</div>
 		</div>
 	);
 };

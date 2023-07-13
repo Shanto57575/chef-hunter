@@ -5,12 +5,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import LazyLoad from "react-lazy-load";
+import Swal from "sweetalert2";
 
 const Chefs = ({ chef }) => {
 	console.log(chef);
 	const { id, chefImage, chefName, ChefExperience, recipes, Likes } = chef;
+
 	return (
-		<div className="card w-full glass transform hover:bg-stone-700 hover:text-amber-400 hover:font-extrabold transition duration-500">
+		<div className="card transform hover:bg-stone-700 hover:text-amber-400 hover:font-extrabold transition duration-500 rounded">
 			<figure>
 				<LazyLoad
 					height={200}
@@ -24,14 +26,13 @@ const Chefs = ({ chef }) => {
 			</figure>
 			<div className="card-body text-start">
 				<h2 className="card-title text-lg lg:font-bold font-serif">
-					Chef Name :{" "}
+					Chef Name :
 					<span className="text-white">
-						{" "}
 						{chefName ? chefName : "keek Firdausi"}
 					</span>
 				</h2>
 				<p className="text-lg md:font-bold font-serif">
-					Years of Experience :{" "}
+					Years of Experience :
 					<span className="text-white">
 						{ChefExperience ? ChefExperience : 7}
 					</span>
@@ -48,7 +49,18 @@ const Chefs = ({ chef }) => {
 				</p>
 				<div className="card-actions justify-end">
 					<Link to={`/chef/${id}`}>
-						<button className="btn btn-active border-white">
+						<button
+							onClick={() =>
+								Swal.fire({
+									position: "center",
+									icon: "success",
+									title: "Login first to view the recipes",
+									showConfirmButton: false,
+									timer: 1500,
+								})
+							}
+							className="btn btn-active border-white"
+						>
 							View Recipes
 						</button>
 					</Link>

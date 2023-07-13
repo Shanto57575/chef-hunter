@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 // eslint-disable-next-line no-unused-vars
-import App from "./App.jsx";
+// import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./layout/Main.jsx";
@@ -50,7 +50,6 @@ const router = createBrowserRouter([
 				path: "/chef/:id",
 				element: (
 					<PrivateRoute>
-						{" "}
 						<SingleChef></SingleChef>
 					</PrivateRoute>
 				),
