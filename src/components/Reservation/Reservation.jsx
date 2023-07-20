@@ -16,12 +16,12 @@ const Reservation = () => {
 		<div
 			name="reserve"
 			id="target-section"
-			className="text-center mx-16 rounded-md my-16"
+			className="text-center lg:mx-16 rounded-md my-16"
 		>
 			<p className="text-center text-white font-serif text-xl">Reservation</p>
-			<h1 className="text-5xl font-serif  mt-3 mb-5">Reserve Your Table!</h1>
+			<h1 className="text-5xl font-serif mt-3 mb-5">Reserve Your Table!</h1>
 
-			<div className="lg:flex gap-5 p-5 items-center justify-center">
+			<div className="lg:flex gap-5 md:p-5 items-center justify-center">
 				<div className="lg:w-1/2 grid grid-cols-3 gap-3">
 					<Flip>
 						<img
