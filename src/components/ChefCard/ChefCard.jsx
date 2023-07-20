@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import Chefs from "./Chefs";
+import { Zoom } from "react-awesome-reveal";
 
 const ChefCard = () => {
 	const [chefs, setChefs] = useState(null);
@@ -27,10 +28,12 @@ const ChefCard = () => {
 				</div>
 			)}
 
-			<div className="lg:mx-16 justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-				{chefs &&
-					chefs.map((chef) => <Chefs key={chef.id} chef={chef}></Chefs>)}
-			</div>
+			<Zoom>
+				<div className="lg:mx-16 justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+					{chefs &&
+						chefs.map((chef) => <Chefs key={chef.id} chef={chef}></Chefs>)}
+				</div>
+			</Zoom>
 		</div>
 	);
 };

@@ -1,9 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { Link } from "react-scroll";
-import bannerImage from "../../assets/italianFood.jpg";
-import banner2 from "../../assets/banner2.jpg";
-import banner3 from "../../assets/banner3.jpg";
-import banner4 from "../../assets/banner4.jpg";
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -101,7 +97,7 @@ const Banner = () => {
 				<SwiperSlide>
 					<img
 						style={{ filter: "brightness(0.5)" }}
-						src="https://media.istockphoto.com/id/1044645782/photo/chef-cook-preparing-vegetables-in-his-kitchen.jpg?s=612x612&w=0&k=20&c=UYXr-rAaL9WdkrJsDbRcNMiPVyFoeSmc56aqKOKbwVA="
+						src="https://media.istockphoto.com/id/516329534/photo/last-straw.jpg?s=612x612&w=0&k=20&c=q9tScD01SPtN5QNAYgWG-ot4n_4hZXOgMStuFgmBFa8="
 						alt="Banner"
 					/>
 					<div className="absolute inset-0 flex items-center justify-center text-center">

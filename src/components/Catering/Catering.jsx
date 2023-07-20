@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
+import "./Catering.css";
 
 const Catering = () => {
 	return (
@@ -7,9 +8,9 @@ const Catering = () => {
 			<h1 className="text-xl text-center font-serif text-white mb-5">
 				Why Choose Us
 			</h1>
-			<h1 className="font-serif mt-5 text-5xl text-center">Our Strength</h1>
+			<h1 className="font-serif mt-5 text-5xl text-center">Our Strength !</h1>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-10 text-center font-bold">
-				<div className="card my-5 h-[350px] glass transform group hover:bg-stone-900 hover:text-white transition duration-300 rounded">
+				<div className="leaf card my-5 h-[350px] glass transform group hover:bg-stone-900 hover:text-white transition duration-300 rounded">
 					<figure className="h-40">
 						<img
 							className="group-hover:scale-125 duration-700 brightness-75 group-hover:brightness-100"
@@ -21,7 +22,7 @@ const Catering = () => {
 						<p>Experience the culinary expertise of our Skilled Chefs.</p>
 					</div>
 				</div>
-				<div className="card my-5 h-[350px] glass transform group hover:bg-stone-900 hover:text-white transition duration-300 rounded">
+				<div className="leaf card my-5 h-[350px] glass transform group hover:bg-stone-900 hover:text-white transition duration-300 rounded">
 					<figure className="h-40">
 						<img
 							className="group-hover:scale-125 duration-700 brightness-75 group-hover:brightness-100"
@@ -34,7 +35,7 @@ const Catering = () => {
 						<p>Safe, hygienic food: worry-free dining experience guaranteed.</p>
 					</div>
 				</div>
-				<div className="card my-5 h-[350px] glass transform group hover:bg-stone-900 hover:text-white transition duration-300 rounded">
+				<div className="leaf card my-5 h-[350px] glass transform group hover:bg-stone-900 hover:text-white transition duration-300 rounded">
 					<figure className="h-40">
 						<img
 							className="group-hover:scale-125 duration-700 brightness-75 group-hover:brightness-100"
@@ -49,7 +50,7 @@ const Catering = () => {
 						<p>Fresh ambiance, flavorful dishes: prioritize your well-being.</p>
 					</div>
 				</div>
-				<div className="card my-5 h-[350px] glass transform group hover:bg-stone-900 hover:text-white transition duration-300 rounded">
+				<div className="leaf card my-5 h-[350px] glass transform group hover:bg-stone-900 hover:text-white transition duration-300 rounded">
 					<figure className="h-40">
 						<img
 							className="group-hover:scale-125 duration-700 group-hover:brightness-125"
