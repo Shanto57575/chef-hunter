@@ -122,7 +122,7 @@ const Header = () => {
 					The <span className="text-white md:font-extrabold">Etalia</span>
 				</h1>
 			</div>
-			<div className="navbar-end">
+			<>
 				<div className="hidden lg:block">
 					<ul className="menu menu-horizontal">
 						<Link
@@ -179,7 +179,7 @@ const Header = () => {
 							>
 								Sign Out
 							</button>
-						)}{" "}
+						)}
 					</ul>
 				</div>
 				{!user && (
@@ -204,7 +204,7 @@ const Header = () => {
 						title={user.displayName}
 					/>
 				)}
-			</div>
+			</>
 		</div>
 	);
 };
