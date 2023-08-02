@@ -23,23 +23,96 @@ const Header = () => {
 			});
 	};
 
+	const navItem = (
+		<>
+			<Link
+				className={`btn btn-ghost normal-case text-xl  ${
+					location.pathname === "/" ? "text-white" : ""
+				}`}
+				to="/"
+				isActive={() => location.pathname === "/"}
+			>
+				<div className="flex items-center gap-2">
+					<FaHome />
+					<span>Home</span>
+				</div>
+			</Link>
+			<Link
+				className={`btn btn-ghost normal-case text-xl  ${
+					location.pathname === "/about" ? "text-white" : ""
+				}`}
+				to="/about"
+				isActive={() => location.pathname === "/about"}
+			>
+				<div className="flex items-center gap-2">
+					<BiCommentError /> <span>About</span>
+				</div>
+			</Link>
+			<Link
+				className={`btn btn-ghost normal-case text-xl ${
+					location.pathname === "/blog" ? "text-white" : " "
+				}`}
+				to="/blog"
+				isActive={() => location.pathname === "/blog"}
+			>
+				<div className="flex items-center gap-2">
+					<BsFillJournalBookmarkFill />
+					<span>Blog</span>
+				</div>
+			</Link>
+			{!user && (
+				<Link
+					className={`btn btn-ghost normal-case text-xl ${
+						location.pathname === "/login" ? "text-white" : " "
+					}`}
+					to="/login"
+					isActive={() => location.pathname === "/login"}
+				>
+					<div className="flex items-center gap-2">
+						<HiOutlineLogin />
+						<span>Sign In</span>
+					</div>
+				</Link>
+			)}
+			<Link
+				className={`btn btn-ghost normal-case text-xl ${
+					location.pathname === "/register" ? "text-white" : " "
+				}`}
+				to="/register"
+				isActive={() => location.pathname === "/register"}
+			>
+				<div className="flex items-center gap-2">
+					<ImEnter />
+					<span>Sign Up</span>
+				</div>
+				{user && (
+					<button
+						className="btn btn-ghost normal-case text-xl "
+						onClick={handleSignOut}
+					>
+						Sign Out
+					</button>
+				)}
+			</Link>
+		</>
+	);
 	return (
-		<div className="navbar bg-base-200 font-serif font-extrabold px-2 py-4">
+		<div className="navbar font-serif font-extrabold px-2 py-4">
 			<div className="navbar-start">
 				<div className="dropdown">
 					<label tabIndex={0} className="btn btn-ghost lg:hidden">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							className="h-5 w-5"
 							fill="none"
 							viewBox="0 0 24 24"
+							strokeWidth={1.5}
 							stroke="currentColor"
+							className="w-6 h-6"
 						>
 							<path
 								strokeLinecap="round"
 								strokeLinejoin="round"
-								strokeWidth="2"
-								d="M4 6h16M4 12h8m-8 6h16"
+								d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
 							/>
 						</svg>
 					</label>
@@ -47,75 +120,7 @@ const Header = () => {
 						tabIndex={0}
 						className="menu menu-compact dropdown-content z-10 shadow bg-base-100 rounded-box w-48"
 					>
-						<Link
-							className={`btn btn-ghost normal-case text-xl  ${
-								location.pathname === "/" ? "text-white" : ""
-							}`}
-							to="/"
-							isActive={() => location.pathname === "/"}
-						>
-							<div className="flex items-center gap-2">
-								<FaHome />
-								<span>Home</span>
-							</div>
-						</Link>
-						<Link
-							className={`btn btn-ghost normal-case text-xl  ${
-								location.pathname === "/about" ? "text-white" : ""
-							}`}
-							to="/about"
-							isActive={() => location.pathname === "/about"}
-						>
-							<div className="flex items-center gap-2">
-								<BiCommentError /> <span>About</span>
-							</div>
-						</Link>
-						<Link
-							className={`btn btn-ghost normal-case text-xl ${
-								location.pathname === "/blog" ? "text-white" : " "
-							}`}
-							to="/blog"
-							isActive={() => location.pathname === "/blog"}
-						>
-							<div className="flex items-center gap-2">
-								<BsFillJournalBookmarkFill />
-								<span>Blog</span>
-							</div>
-						</Link>
-						{!user && (
-							<Link
-								className={`btn btn-ghost normal-case text-xl ${
-									location.pathname === "/login" ? "text-white" : " "
-								}`}
-								to="/login"
-								isActive={() => location.pathname === "/login"}
-							>
-								<div className="flex items-center gap-2">
-									<HiOutlineLogin />
-									<span>Sign In</span>
-								</div>
-							</Link>
-						)}
-						<Link
-							className={`btn btn-ghost normal-case text-xl ${
-								location.pathname === "/register" ? "text-white" : " "
-							}`}
-							to="/register"
-							isActive={() => location.pathname === "/register"}
-						>
-							<div className="flex items-center gap-2">
-								<ImEnter />
-								<span>Sign Up</span>
-							</div>
-						</Link>
-						{user && (
-							<button
-								className="btn btn-ghost normal-case text-xl "
-								onClick={handleSignOut}
-							>
-								Sign Out
-							</button>
-						)}
+						<div className="bg-black h-60">{navItem}</div>
 					</ul>
 				</div>
 				<h1 className="md:text-2xl font-serif md:btn">
@@ -123,82 +128,12 @@ const Header = () => {
 				</h1>
 			</div>
 			<>
-				<div className="hidden lg:block">
-					<ul className="menu menu-horizontal">
-						<Link
-							className={`btn btn-ghost normal-case text-xl  ${
-								location.pathname === "/" ? "text-white" : ""
-							}`}
-							to="/"
-							isActive={() => location.pathname === "/"}
-						>
-							<div className="flex items-center gap-2">
-								<FaHome />
-								<span>Home</span>
-							</div>
-						</Link>
-						<Link
-							className={`btn btn-ghost normal-case text-xl  ${
-								location.pathname === "/about" ? "text-white" : ""
-							}`}
-							to="/about"
-							isActive={() => location.pathname === "/about"}
-						>
-							<div className="flex items-center gap-2">
-								<BiCommentError /> <span>About</span>
-							</div>
-						</Link>
-						<Link
-							className={`btn btn-ghost normal-case text-xl ${
-								location.pathname === "/blog" ? "text-white" : " "
-							}`}
-							to="/blog"
-							isActive={() => location.pathname === "/blog"}
-						>
-							<div className="flex items-center gap-2">
-								<BsFillJournalBookmarkFill />
-								<span>Blog</span>
-							</div>
-						</Link>
-						<Link
-							className={`btn btn-ghost normal-case text-xl ${
-								location.pathname === "/register" ? "text-white" : " "
-							}`}
-							to="/register"
-							isActive={() => location.pathname === "/register"}
-						>
-							<div className="flex items-center gap-2">
-								<ImEnter />
-								<span>Sign Up</span>
-							</div>
-						</Link>
-						{user && (
-							<button
-								className="btn btn-ghost normal-case text-xl "
-								onClick={handleSignOut}
-							>
-								Sign Out
-							</button>
-						)}
-					</ul>
+				<div className="navbar-center hidden lg:flex">
+					<ul className="menu menu-horizontal px-1">{navItem}</ul>
 				</div>
-				{!user && (
-					<Link
-						className={`btn btn-ghost normal-case text-xl ${
-							location.pathname === "/login" ? "text-white" : " "
-						}`}
-						to="/login"
-						isActive={() => location.pathname === "/login"}
-					>
-						<div className="flex items-center gap-2">
-							<HiOutlineLogin />
-							<span>Sign In</span>
-						</div>
-					</Link>
-				)}
 				{user && (
 					<img
-						className="rounded-full text-xs w-12"
+						className="rounded-full h-12 w-12"
 						src={user ? user.photoURL : "loading"}
 						alt="profile"
 						title={user.displayName}

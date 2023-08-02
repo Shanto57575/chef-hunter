@@ -1,14 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-// import React from "react";
-// import Pdf from "react-to-pdf";
-
-// const ref = React.createRef();
 
 const Blog = () => {
 	return (
-		<div className="h-screen">
-			<h1 className="text-center font-serif text-5xl text-white underline mb-10">
+		<div className="lg:h-screen lg:mx-12 lg:my-12">
+			<h1 className="text-center font-serif md:text-5xl text-white underline mb-10">
 				Questions & Answers
 			</h1>
 			<div

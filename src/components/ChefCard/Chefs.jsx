@@ -13,8 +13,6 @@ import "./Chefs.css";
 
 const Chefs = ({ chef }) => {
 	const { user } = useContext(AuthContext);
-
-	console.log(chef);
 	const { id, chefImage, chefName, ChefExperience, recipes, Likes } = chef;
 
 	return (

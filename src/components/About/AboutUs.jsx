@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 
 const AboutUs = () => {
 	return (
-		<div className="font-serif font-extrabold text-center h-screen">
+		<div className="font-serif font-extrabold text-center lg:h-screen lg:mx-12 lg:my-12">
 			<Marquee speed={200} pauseOnHover={true} className="flex rounded-lg">
 				<img
 					className="h-[150px] rounded-md"
@@ -50,10 +50,10 @@ const AboutUs = () => {
 					src="https://media.istockphoto.com/id/1343182422/photo/empty-rustic-design-restaurant-with-wooden-furniture-and-some-decorative-plants.jpg?b=1&s=170667a&w=0&k=20&c=et0uadwZ9NPZbg-t8nRENoJh5I_aqTCVqEhO2kMcywc="
 				/>
 			</Marquee>
-			<h2 className="mt-10 mb-4 text-5xl">
+			<h2 className="mt-10 mb-4 md:text-5xl">
 				Welcome to <span className="text-white">The Etalia</span>
 			</h2>
-			<div className="text-justify sm:p-1 md:p-0">
+			<div className="text-justify p-2">
 				Where authentic Italian cuisine meets rustic elegance. Our restaurant is
 				home to a team of expert Italian chefs, each one handpicked from the
 				finest culinary schools in Italy. Their passion for creating delicious,

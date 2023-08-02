@@ -74,7 +74,7 @@ const Register = () => {
 		form.reset();
 	};
 	return (
-		<div className="font-serif font-extrabold">
+		<div className="font-serif font-extrabold mx-12 my-12">
 			<Marquee
 				speed={100}
 				pauseOnHover="true"
