@@ -45,7 +45,7 @@ const Header = () => {
 					</label>
 					<ul
 						tabIndex={0}
-						className="menu menu-compact dropdown-content mt-3 p-2 z-10 shadow bg-base-100 rounded-box w-52"
+						className="menu menu-compact dropdown-content z-10 shadow bg-base-100 rounded-box w-48"
 					>
 						<Link
 							className={`btn btn-ghost normal-case text-xl  ${
@@ -93,7 +93,7 @@ const Header = () => {
 								<div className="flex items-center gap-2">
 									<HiOutlineLogin />
 									<span>Sign In</span>
-								</div>{" "}
+								</div>
 							</Link>
 						)}
 						<Link
@@ -123,8 +123,8 @@ const Header = () => {
 				</h1>
 			</div>
 			<div className="navbar-end">
-				<div className="hidden lg:flex">
-					<ul className="menu menu-horizontal px-1">
+				<div className="hidden lg:block">
+					<ul className="menu menu-horizontal">
 						<Link
 							className={`btn btn-ghost normal-case text-xl  ${
 								location.pathname === "/" ? "text-white" : ""
