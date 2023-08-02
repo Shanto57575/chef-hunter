@@ -24,7 +24,7 @@ const Header = () => {
 	};
 
 	return (
-		<div className="navbar bg-base-200 font-serif font-extrabold p-6">
+		<div className="navbar bg-base-200 font-serif font-extrabold px-2 py-4">
 			<div className="navbar-start">
 				<div className="dropdown">
 					<label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -45,7 +45,7 @@ const Header = () => {
 					</label>
 					<ul
 						tabIndex={0}
-						className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+						className="menu menu-compact dropdown-content mt-3 p-2 z-10 shadow bg-base-100 rounded-box w-52"
 					>
 						<Link
 							className={`btn btn-ghost normal-case text-xl  ${
@@ -119,7 +119,6 @@ const Header = () => {
 					</ul>
 				</div>
 				<h1 className="md:text-2xl font-serif md:btn">
-					{" "}
 					The <span className="text-white md:font-extrabold">Etalia</span>
 				</h1>
 			</div>
@@ -194,10 +193,9 @@ const Header = () => {
 						<div className="flex items-center gap-2">
 							<HiOutlineLogin />
 							<span>Sign In</span>
-						</div>{" "}
+						</div>
 					</Link>
 				)}
-
 				{user && (
 					<img
 						className="rounded-full text-xs w-12"
