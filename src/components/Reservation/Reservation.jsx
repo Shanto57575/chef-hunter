@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faUserAlt,
@@ -9,9 +9,27 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./Reservation.css";
-import { Flip, Roll, Rotate, Slide, Zoom } from "react-awesome-reveal";
+import { Flip, Rotate, Slide, Zoom } from "react-awesome-reveal";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import Swal from "sweetalert2";
 
 const Reservation = () => {
+	const [startDate, setStartDate] = useState(new Date());
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		const form = event.target;
+		Swal.fire({
+			position: "center",
+			icon: "success",
+			title: "Booking Confirmed, Welcome to The Etalia!",
+			showConfirmButton: false,
+			timer: 1500,
+		});
+		form.reset();
+	};
+
 	return (
 		<div
 			name="reserve"
@@ -92,12 +110,12 @@ const Reservation = () => {
 						<span className="text-white">Booking request</span> +88-123-123456{" "}
 						<span className="text-white">or fill out the order form</span>
 					</p>
-					<form className="text-center">
+					<form onSubmit={handleSubmit} className="text-center">
 						<div className="flex flex-wrap -mx-3 m-1">
 							<div className="w-full md:w-1/2 px-3 md:mb-0">
 								<input
 									className="appearance-none block bg-black  w-full border rounded py-3 px-4 mb-3 leading-tight"
-									id="grid-first-name"
+									name="name"
 									type="text"
 									placeholder="Your Name"
 									required
@@ -106,8 +124,8 @@ const Reservation = () => {
 							<div className="w-full md:w-1/2 px-3">
 								<input
 									className="appearance-none block w-full border bg-black border-gray-200 rounded py-3 px-4 leading-tight"
-									id="grid-last-name"
-									type="text"
+									name="number"
+									type="tel"
 									placeholder="Phone Number"
 									required
 								/>
@@ -119,8 +137,9 @@ const Reservation = () => {
 									<FontAwesomeIcon icon={faUserAlt} />
 									<div className="relative">
 										<select
-											className="block appearance-none w-full py-3 px-4 pr-8 bg-black rounded leading-tight focus:outline-none "
+											className="block appearance-none w-full cursor-pointer py-3 px-4 pr-8 bg-black rounded leading-tight focus:outline-none"
 											id="grid-state"
+											required
 										>
 											<option>1 person</option>
 											<option>2 person</option>
@@ -128,9 +147,11 @@ const Reservation = () => {
 											<option>4 person</option>
 											<option>5 person</option>
 											<option>6 person</option>
-											<option>7 person</option>
+											<option>8 person</option>
+											<option>9 person</option>
+											<option>10 person</option>
 										</select>
-										<div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+										<div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
 											<svg
 												className="fill-current h-4 w-4"
 												xmlns="http://www.w3.org/2000/svg"
@@ -143,16 +164,14 @@ const Reservation = () => {
 								</div>
 							</div>
 							<div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-								<div className="flex justify-center items-center border rounded-sm bg-black">
+								<div className="flex justify-center items-center border rounded-sm bg-black px-5">
 									<FontAwesomeIcon icon={faCalendar} />
 									<div className="relative">
-										<select
-											className="block appearance-none bg-black px-5 w-full py-3 pr-8 rounded leading-tight "
-											id="grid-state"
-										>
-											<FontAwesomeIcon icon={faCalendar} />
-											<option>DD-MM-YYYY</option>
-										</select>
+										<DatePicker
+											className="block appearance-none w-full cursor-pointer py-3 px-4 pr-8 bg-black rounded leading-tight focus:outline-none"
+											selected={startDate}
+											onChange={(date) => setStartDate(date)}
+										/>
 										<div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
 											<svg
 												className="fill-current h-4 w-4"
@@ -170,7 +189,7 @@ const Reservation = () => {
 									<FontAwesomeIcon icon={faClock} />
 									<div className="relative">
 										<select
-											className="block appearance-none bg-black w-full py-3 px-4 pr-8 rounded leading-tight "
+											className="block appearance-none cursor-pointer bg-black w-full py-3 px-4 pr-8 rounded leading-tight focus:outline-none"
 											id="grid-state"
 										>
 											<option> 10 : 00 am</option>
@@ -202,12 +221,17 @@ const Reservation = () => {
 						</div>
 						<textarea
 							placeholder="Message"
+							name="message"
 							className="border bg-black my-5 h-36 w-full p-4"
 						/>
+						<button
+							type="submit"
+							value="Book a Table"
+							className="w-full cursor-pointer font-bold border text-center p-3 bg-black hover:bg-stone-700 mx-auto"
+						>
+							Book a Table
+						</button>
 					</form>
-					<p className="cursor-pointer font-bold border text-center p-3 bg-black hover:bg-stone-700 mx-auto">
-						Book a Table
-					</p>
 				</div>
 			</div>
 		</div>
